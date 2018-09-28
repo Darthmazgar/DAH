@@ -1,2 +1,2 @@
 # DAH
-Data acquisition and handling coursework.
+Data Acquisition and Handling
