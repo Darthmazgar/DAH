@@ -22,6 +22,14 @@ def plot_data(data_log, sample_no, run_time):
     plt.xlabel("Time (s)")
     plt.ylabel("Voltage (V)")
     plt.show()
+    
+def write_to_file(data, sample_no, run_time, file="cp3c.txt", info=""):
+    out_file = open(file, "w")
+    out_file.write(info)
+    time_step = run_time / sample_no
+    for i in range(sample_no):
+        out_file.write("Time: %f, Voltage: %f" % (time_step * (i+1), data[i]))
+    out_file.close() 
 
 def main():
     ADC0 = MCP3208(chip=0)
