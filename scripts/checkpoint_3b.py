@@ -32,7 +32,7 @@ def write_to_file(data, sample_no, run_time, file="cp3c.txt", info=""):
     out_file.close() 
     
 def sin_wave(no_steps, amp):
-    retun [amp*np.sin(y) for y in range(no_steps)
+    retun [amp*np.sin(x) for x in range(no_steps)
            
 def main():
     ADC0 = MCP3208(chip=0)
