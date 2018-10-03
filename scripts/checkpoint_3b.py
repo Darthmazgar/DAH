@@ -17,8 +17,6 @@ def read_data(sample_no, chip):
 
 def plot_data(data_log, sample_no, run_time):
     x_data = [x * 10 *run_time / sample_no for x in range(sample_no)]
-    # print(x_data)
-    # print(data_log)
     plt.plot(x_data, data_log)
     plt.title("Voltage Varying with Time")
     plt.xlabel("Time (s)")
