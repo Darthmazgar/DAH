@@ -71,9 +71,10 @@ def send_data(data, maxv, chip):
     """
     if np.amax(data) > maxv:
         # print("Fucking abort, Bro!")
-        data = crop_data(data, maxv)  # If outwith max range then crop the data.
+        data = crop_data(data, maxv)  # If outwith max range then crop the data.    
     for i in data:
         chip.analogWriteVolt(0, i)  # Send data signal.
+        print(i)
         
 def crop_data(data, maxv):
     """
@@ -90,16 +91,28 @@ def crop_data(data, maxv):
             point = -maxv
     return data
 
-def plot_time_data(y_data, sample_no, run_time, x_lab="", y_lab="", title="", show=True, save=False, save_name="sample.pdf"):
-    x_data = [x *(run_time / sample_no) for x in range(sample_no)]
+def plot_time_data(y_data, sample_no, run_time=False, x_lab="", y_lab="", title="", show=True, save=False, save_name="sample.pdf"):
+    if run_time:
+        x_data = [x *(run_time / sample_no) for x in range(sample_no)]
+    else:
+        x_data = [x for x in range(sample_no)]
     plt.plot(x_data, y_data)
     plt.title(title)
     plt.xlabel(x_lab)
     plt.ylabel(y_lab)
     if show:
+        plt.legend(["Read Data", "Input Data"])
         plt.show()
     if save:
         plt.savefig(save_name)
+
+def plot_points(y_data, sample_no, run_time, x_lab="", y_lab="", title=""):
+    x_data = [x *(run_time / sample_no) for x in range(sample_no)]
+    plt.plot(x_data, y_data, '-')
+    plt.title(title)
+    plt.xlabel(x_lab)
+    plt.ylabel(y_lab)
+    plt.show()
     
 def write_to_file(data, sample_no, run_time, file="cp3c.txt", info=""):
     out_file = open(file, "w")
@@ -109,28 +122,53 @@ def write_to_file(data, sample_no, run_time, file="cp3c.txt", info=""):
         out_file.write("Time: %f, Voltage: %f\n" % (time_step * (i+1), data[i]))
     out_file.close() 
     
-def sin_wave(no_steps, amp, dt):
+def sin_wave(no_steps, amp, dt, c):
     """
     param: no_steps (int), Number of steps to be calculated.
     param: amp (float), Amplitude of the wave.
     param: dt (float), Time step.
     return: (float[]) Sine wave output list.
     """
-    """
-    retun [amp*np.sin(x*dt) for x in range(no_steps)]"""
-           
+    wave = [amp*np.sin(x*dt) + c for x in range(no_steps)]
+    return wave
+
+def send_and_recieve(sample_no, chip_in, chip_out, data, maxv):
+    data_log = np.zeros(sample_no)
+    time_init = time.time()  # Start time
+    for i in range(sample_no):
+        if np.amax(data) > maxv:
+            # print("Fucking abort, Bro!")
+            data = crop_data(data, maxv)  # If outwith max range then crop the data.
+        else:
+            chip_out.analogWriteVolt(0, data[i])  # Send data signal.
+        data_log[i] = chip_in.analogReadVolt(0)  # Recieve Data
+    time_end = time.time()  # End time
+    run_time = time_end - time_init
+    
+    return data_log, run_time
+
 def main():
     ADC0 = MCP3208(chip=0)
     DAC1 = MCP492X(chip=1, channelCount=2, vref=3.3)
 
     sample_no = 100
 
-    data, run_time = read_data(sample_no, chip=ADC0)
-    mean, high_mean, low_mean = avg_data(data)
+    in_data = sin_wave(100, 1, 0.1, 1)
+    # send_data(in_data, maxv=2, chip=DAC1)
+    
+    
+    # data, run_time = read_data(sample_no, chip=ADC0)
+    # mean, high_mean, low_mean = avg_data(data)
+    data, run_time = send_and_recieve(sample_no, ADC0, DAC1, in_data, maxv=2)
+    # data += 1
 
     # write_to_file(data, sample_no, run_time, file="square_2.txt", info="Voltage varying with time for a square wave input being read using an ADC.\n")
-    print("Mean Voltage: %.2fV; High Mean Voltage: %.2fV; Low Mean Voltage: %.2fV\n" % (mean, high_mean, low_mean))
-    plot_time_data(data, sample_no, run_time, x_lab="Time (s)", y_lab="Voltage (V)", title="Voltage Varying with Time")
+    # print("Mean Voltage: %.2fV; High Mean Voltage: %.2fV; Low Mean Voltage: %.2fV\n" % (mean, high_mean, low_mean))
+    plot_time_data(data, sample_no, run_time, show=False)
+    plot_time_data(in_data, sample_no, run_time, x_lab="Time (s)", y_lab="Voltage (V)", title="Voltage Varying with Time",  save_name="Max_frequency.pdf", show=True)
+
+    # plot_points(data, sample_no, run_time, x_lab="Time (s)", y_lab="Voltage (V)", title="Voltage Varying with Time at a Frequency of 70Hz")
+    # print("Sample Frequency: %.2fHz" % (sample_no / run_time))
 
 
 main()
