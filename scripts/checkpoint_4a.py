@@ -17,5 +17,9 @@ mcp.digitalWrite(LED0, GPIO.LOW)
  
 # Loop for ever
 #    Insert your code here
+while True:
+	value = not GPIO.input(LED0)
+	GPIO.output(LED0, value)
+	time.sleep(0.10)
 # Include a delay 
-time.sleep(0.10)
+
