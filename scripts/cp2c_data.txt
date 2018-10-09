@@ -1,0 +1,27 @@
+Varying the input voltage to LED using a DAC.
+The output is read using an LDR and then converted using an ADC.
+
+Input 0: 0.411795V
+Output 0: 0.869524V
+
+Input 1: 0.824396V
+Output 1: 0.673700V
+
+Input 2: 1.236996V
+Output 2: 0.669670V
+
+Input 3: 1.649597V
+Output 3: 0.685788V
+
+Input 4: 2.062198V
+Output 4: 1.216850V
+
+Input 5: 2.474799V
+Output 5: 1.725348V
+
+Input 6: 2.887399V
+Output 6: 1.984835V
+
+Input 7: 3.300000V
+Output 7: 2.125861V
+
