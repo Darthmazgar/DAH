@@ -15,11 +15,10 @@ mcp.setFunction(LED0, GPIO.OUT) #Set Pin as output
 # Turn on the LED for the first time
 mcp.digitalWrite(LED0, GPIO.LOW)
  
-# Loop for ever
-#    Insert your code here
 while True:
-	value = not GPIO.input(LED0)
-	GPIO.output(LED0, value)
-	time.sleep(0.10)
-# Include a delay 
+        value = not mcp.digitalRead(LED0)
+        # print(value, LED0)
+        
+        mcp.digitalWrite(LED0, value)
+        time.sleep(0.50)
 
