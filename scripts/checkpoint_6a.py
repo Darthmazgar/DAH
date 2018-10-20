@@ -9,7 +9,7 @@ def read_file(file="upsilons-mass-xaa.txt"):
 
 
 def plot_hist(data, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
-    n, bins, patches = plt.hist(data, bins=100, density=True)
+    n, bins, patches = plt.hist(data, bins=75, density=True)
     plt.xlabel(x_lab)
     plt.ylabel(y_lab)
     plt.title(title)
@@ -20,22 +20,21 @@ def plot_hist(data, title="", x_lab="", y_lab="", show=False, save=False, sv_nm=
     return n, bins, patches
 
 
-def find_peak(x, y, percentage_peak=5):  # have a bit that if its mor than a certain % up then peak there
+def find_peak(x, y, percentage_peak=15, show_peaks=True):  # have a bit that if its mor than a certain % up then peak there
     per = 1 + percentage_peak / 100
     peaks = []
     print(len(y))
-    for i in range(1, len(y)-1):
-        if y[i] > y[i-1]*per and y[i+1] < y[i]:
+    for i in range(2, len(y)-1):
+        if y[i] > y[i-2]*per and y[i+1] < y[i]:
             peaks.append(i)
-
-    print(peaks)
-    x_new = [x[i] for i in range(len(peaks))]
-    print(x[peaks[5]])
-    print(x_new)
-    y_new = [y[i] for i in range(len(peaks))]
-    plt.plot(x_new, y_new, 'o')
-    plt.show()
-    max_y = np.argmax(y)
+    x_new = [x[i] for i in peaks]
+    y_new = [y[i] for i in peaks]
+    peak_coords = set(zip(x_new, y_new))  # Probably don't need
+    peak_masses = x_new
+    if show_peaks:
+        plt.plot(x_new, y_new, 'o')
+        plt.show()
+    return peak_masses
 
 
 def main():
