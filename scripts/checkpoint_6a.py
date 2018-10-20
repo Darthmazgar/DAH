@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def read_file(file="upsilons-mass-xaa.txt"):
+def read_file(file="txt_files/upsilons-mass-xaa.txt"):
     data = np.genfromtxt(file)
     return data
 
