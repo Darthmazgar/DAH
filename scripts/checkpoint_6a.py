@@ -9,7 +9,7 @@ def read_file(file="upsilons-mass-xaa.txt"):
 
 
 def plot_hist(data, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
-    n, bins, patches = plt.hist(data, bins=75, density=True)
+    n, bins, patches = plt.hist(data, bins=100, density=True)
     plt.xlabel(x_lab)
     plt.ylabel(y_lab)
     plt.title(title)
@@ -20,10 +20,9 @@ def plot_hist(data, title="", x_lab="", y_lab="", show=False, save=False, sv_nm=
     return n, bins, patches
 
 
-def find_peak(x, y, percentage_peak=15, show_peaks=True):  # have a bit that if its mor than a certain % up then peak there
+def find_peak(x, y, percentage_peak=15, show_peaks=True):
     per = 1 + percentage_peak / 100
     peaks = []
-    print(len(y))
     for i in range(2, len(y)-1):
         if y[i] > y[i-2]*per and y[i+1] < y[i]:
             peaks.append(i)
@@ -40,9 +39,8 @@ def find_peak(x, y, percentage_peak=15, show_peaks=True):  # have a bit that if 
 def main():
     data = read_file()
     n, bins, patches = plot_hist(data, title="Upsilons Mass", x_lab="Mass ($GeV/c^2$)", y_lab="Frequency")
-    # bin_data = zip(bins[:-1], n)
-    # print(bin_data[0])
-    find_peak(x=bins[:-1], y=n)
+    peak_masses = find_peak(x=bins[:-1], y=n)
+    print("The masses of upsilon 1, upsilon 2 and upsilon 3 are %.3f, %.3f and %.3f GeV respectively." % (peak_masses[0], peak_masses[1], peak_masses[2]))
 
 main()
 
