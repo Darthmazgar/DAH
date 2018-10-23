@@ -9,7 +9,7 @@ def read_file(file="txt_files/upsilons-mass-xaa.txt"):
 
 
 def plot_hist(data, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
-    n, bins, patches = plt.hist(data, bins=100, density=True)
+    n, bins, patches = plt.hist(data, bins=50, density=True)
     plt.xlabel(x_lab)
     plt.ylabel(y_lab)
     plt.title(title)
