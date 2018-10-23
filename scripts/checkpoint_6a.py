@@ -19,6 +19,12 @@ def plot_hist(data, title="", x_lab="", y_lab="", show=False, save=False, sv_nm=
         plt.show()
     return n, bins, patches
 
+def find_stupid_peak(x, y, min_index, max_index):
+    y_max = y[min]
+    for i in range(x[min], x[max]): # min_index is the index of the x bin at the minimum position
+        if(y[i] >= y[i-1]):
+            y_max = y[i]
+    return y_max
 
 def find_peak(x, y, percentage_peak=25, show_peaks=True, save=False, sv_nm="muon_with_peaks.pdf"):
     per = 1 + percentage_peak / 100
@@ -37,30 +43,12 @@ def find_peak(x, y, percentage_peak=25, show_peaks=True, save=False, sv_nm="muon
         plt.show()
     return peak_masses, peaks
 
-def peak_analysis(data, peak_index):
-    mins = np.zeros(len(peak_index))
-    for index in peak_index:
-        next = data[index+1]
-        i = index
-        while next < data[i]:
-            i += 1
-            next = data[i+1]
-        right_min = i
-
-        prev = data[index-1]
-        i = index
-        while prev < data[i]:
-            i -= 1
-            prev = data[i-1]
-        left_min = i
-        mins[index] = [left_min, right_min]
-    return mins
-
 
 def main():
     data = read_file()
     n, bins, patches = plot_hist(data, title="Muon Pair Masses", x_lab="Mass ($GeV/c^2$)", y_lab="Frequency")
     peak_masses, peak_index = find_peak(x=bins[:-1], y=n)
+    stupid_peak = find_stupid_peak(x=bins[:-1], y=n)
     differences = peak_masses - peak_masses[0]
     print("The muon pair masses are: %.3f, %.3f and %.3f GeV." % (peak_masses[0], peak_masses[1], peak_masses[2]))
     print("The Muon mass differences are: %.3f and %.3f GeV." %(differences[1], differences[2]))
