@@ -8,7 +8,7 @@ def read_file(file="txt_files/upsilons-mass-xaa.txt"):
     return data
 
 
-def plot_hist(data, bins=250, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
+def plot_hist(data, bins=225, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
     n, bins, patches = plt.hist(data, bins=bins) # , density=True)
     plt.xlabel(x_lab)
     plt.ylabel(y_lab)
@@ -34,9 +34,11 @@ def noise_check(y, peaks, per=5):
     for i in range(len(peaks)-1):
         if np.isclose(a=peaks[i], b=peaks[i+1], atol=smoothing):
             rem.append(i)  # not removing the 1st cause of the noise
+        elif not np.isclose(a=y[i], b=y[i+1], atol=0.1*y[i]):  # attempt to remove massive spikes
+            rem.append(i)
     for i in sorted(rem, reverse=True):
         del peaks[i]
-
+    del peaks[len(peaks)-1]  # Removes the last data. This works for this data but possibly not generally :'(
     return peaks
 
 
