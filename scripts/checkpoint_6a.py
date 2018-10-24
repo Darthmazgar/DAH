@@ -8,8 +8,8 @@ def read_file(file="txt_files/upsilons-mass-xaa.txt"):
     return data
 
 
-def plot_hist(data, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
-    n, bins, patches = plt.hist(data, bins=150) # , density=True)
+def plot_hist(data, bins=150, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
+    n, bins, patches = plt.hist(data, bins=bins) # , density=True)
     plt.xlabel(x_lab)
     plt.ylabel(y_lab)
     plt.title(title)
@@ -28,27 +28,38 @@ def find_stupid_peak(x, y, min_index, max_index):
     return y_max
 
 
+def noise_check(peaks, smoothing=5):
+    rem = []
+    for i in range(len(peaks)-1):
+        if np.isclose(a=peaks[i], b=peaks[i+1], atol=smoothing):
+            rem.append(i)
+    for i in sorted(rem, reverse=True):
+        del peaks[i]
+    return peaks
+
+
 def find_peak(x, y, smoothing=3, percentage_peak=10, show_peaks=True, save=False, sv_nm="muon_with_peaks.pdf"):
     per = 1 + percentage_peak / 100
     peaks = []
     peak_found = False
-    for i in range(1, len(y)-1):
+    for i in range(smoothing, len(y)-1):
         if i + smoothing < len(y):
             next_avg = np.average(y[i:i+smoothing])
         elif i + smoothing >= len(y):
             next_avg = len(y) - i  # Maybe need -1
-        else:
-            next_avg = y[i+1]  # Contingency
+
+        prev_avg = np.average(y[i-smoothing:i])
 
         if peak_found and y[i] < y[i+1]:
             peak_found = False
 
-        if y[i] > next_avg * per and y[i+1] < y[i] and not peak_found:
+        if y[i] > next_avg * per and y[i] > prev_avg and not peak_found:
             peaks.append(i)
             peak_found = True
+
+    peaks = noise_check(peaks)
     x_new = [x[i] for i in peaks]
     y_new = [y[i] for i in peaks]
-    # peak_coords = set(zip(x_new, y_new))  Probably don't need
     peak_masses = x_new
     if show_peaks:
         plt.plot(x_new, y_new, 'o')
