@@ -8,7 +8,7 @@ def read_file(file="txt_files/upsilons-mass-xaa.txt"):
     return data
 
 
-def plot_hist(data, bins=150, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
+def plot_hist(data, bins=250, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
     n, bins, patches = plt.hist(data, bins=bins) # , density=True)
     plt.xlabel(x_lab)
     plt.ylabel(y_lab)
@@ -28,18 +28,21 @@ def find_stupid_peak(x, y, min_index, max_index):
     return y_max
 
 
-def noise_check(peaks, smoothing=5):
+def noise_check(y, peaks, per=5):
     rem = []
+    smoothing = int(len(y)*per/100)
     for i in range(len(peaks)-1):
         if np.isclose(a=peaks[i], b=peaks[i+1], atol=smoothing):
-            rem.append(i)
+            rem.append(i)  # not removing the 1st cause of the noise
     for i in sorted(rem, reverse=True):
         del peaks[i]
+
     return peaks
 
 
-def find_peak(x, y, smoothing=3, percentage_peak=10, show_peaks=True, save=False, sv_nm="muon_with_peaks.pdf"):
+def find_peak(x, y, smoothing=3, percentage_peak=15, show_peaks=True, save=False, sv_nm="muon_with_peaks.pdf"):
     per = 1 + percentage_peak / 100
+    smoothing = int(len(y) * smoothing/100)
     peaks = []
     peak_found = False
     for i in range(smoothing, len(y)-1):
@@ -57,7 +60,7 @@ def find_peak(x, y, smoothing=3, percentage_peak=10, show_peaks=True, save=False
             peaks.append(i)
             peak_found = True
 
-    peaks = noise_check(peaks)
+    peaks = noise_check(y, peaks)
     x_new = [x[i] for i in peaks]
     y_new = [y[i] for i in peaks]
     peak_masses = x_new
