@@ -21,7 +21,7 @@ def plot_hist(data, bins=225, title="", x_lab="", y_lab="", show=False, save=Fal
 
 
 def find_stupid_peak(x, y, min_index, max_index):
-    y_max = y[min]
+    y_max = y[min]  # you cant call variables min or max because they are key words
     for i in range(x[min], x[max]): # min_index is the index of the x bin at the minimum position
         if y[i] >= y[i-1]:
             y_max = y[i]
