@@ -101,6 +101,18 @@ def peak_analysis(y_data, x_data, peak_index):
     return ranges, indicies
 
 
+def region_mean(x_data, ind_range):
+    return np.average(x_data[ind_range[0]:ind_range[1]])
+
+
+def reigon_varience(x_data, ind_range):
+    return np.var(x_data[ind_range[0]:ind_range[1]])
+
+
+def reigon_stdev(x_data, ind_range):
+    return np.std(x_data[ind_range[0]:ind_range[1]])
+
+
 def main():
     data = read_file()
     n, bins, patches = plot_hist(data, title="Muon Pair Masses", x_lab="Mass ($GeV/c^2$)", y_lab="Frequency")
@@ -110,7 +122,18 @@ def main():
     # print("The muon pair masses are: %.3f, %.3f and %.3f GeV." % (peak_masses[0], peak_masses[1], peak_masses[2]))
     # print("The Muon mass differences are: %.3f and %.3f GeV." %(differences[1], differences[2]))
     mass_ranges, index_ranges = peak_analysis(y_data=n, x_data=bins, peak_index=peak_index)  # peak_location
-    print(mass_ranges, index_ranges)
+    # print(mass_ranges, index_ranges)
+
+    peak_region_means = []
+    reigon_var = []
+    reigon_std = []
+    for i in range(len(index_ranges)):
+        peak_region_means.append(region_mean(x_data=bins, ind_range=index_ranges[i]))
+        reigon_var.append(reigon_varience(x_data=bins, ind_range=index_ranges[i]))
+        reigon_std.append(reigon_stdev(x_data=bins, ind_range=index_ranges[i]))
+        # print(peak_region_means[i])
+        # print(reigon_var[i])
+        # print(reigon_std[i])
 
 
 main()
