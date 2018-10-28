@@ -73,7 +73,7 @@ def find_peak(x, y, smoothing=3, percentage_peak=15, show_peaks=True, save=False
         plt.plot(x_new, y_new, 'o')
         if save:
             plt.savefig(sv_nm)
-        plt.show()
+        # plt.show()  #########################################################################################################
     return peak_masses, peaks
 
 
@@ -127,7 +127,7 @@ def FWHM(peak_ind, ind_range, y_data, x_data):
     while larger:
 
         if y_data[i] <= (half_max + avg_min):
-            righ_lim = i
+            right_lim = i
             if one_side:
                 larger = False
             else:
@@ -140,13 +140,17 @@ def FWHM(peak_ind, ind_range, y_data, x_data):
                 one_side = True
         i += 1
         j -= 1
+    plt.axvline(x_data[right_lim], color='red')
+    plt.axvline(x_data[left_lim], color='red')
+    plt.show()
 
-    width = x_data[righ_lim] - x_data[left_lim]
+    width = x_data[right_lim] - x_data[left_lim]
     return width
 
 
 def est_sigma(fwhm):
     return fwhm / 2.35
+
 
 def main():
     data = read_file()
@@ -154,8 +158,8 @@ def main():
     peak_masses, peak_index = find_peak(x=bins[:-1], y=n)
     # stupid_peak = find_stupid_peak(x=bins[:-1], y=n)
     differences = peak_masses - peak_masses[0]
-    # print("The muon pair masses are: %.3f, %.3f and %.3f GeV." % (peak_masses[0], peak_masses[1], peak_masses[2]))
-    # print("The Muon mass differences are: %.3f and %.3f GeV." %(differences[1], differences[2]))
+    # print("The muon pair masses are: %.3f, %.3f and %.3f GeV/c^2." % (peak_masses[0], peak_masses[1], peak_masses[2]))
+    # print("The Muon mass differences are: %.3f and %.3f GeV/c^2." %(differences[1], differences[2]))
     mass_ranges, index_ranges = peak_analysis(y_data=n, x_data=bins, peak_index=peak_index)  # peak_location
     # print(mass_ranges, index_ranges)
 
@@ -172,11 +176,11 @@ def main():
         # print(reigon_std[i])
     # Still need to find out what std dev on the mean is?! Bias probs because left higher than right
 
-    fwhm = FWHM(peak_index[i], index_ranges[i], n, bins)
+    fwhm = FWHM(peak_index[0], index_ranges[0], n, bins)
     # print(fwhm)
     sigma = est_sigma(fwhm)
     # print(sigma)
-    print("1S peak of: (%.2f +/- %.2f) GeV." % (peak_masses[0], sigma))
+    print("1S peak of: (%.2f +/- %.2f) GeV/c^2." % (peak_masses[0], sigma))
 
 
 main()
