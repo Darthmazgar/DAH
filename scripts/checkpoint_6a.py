@@ -48,7 +48,7 @@ def main():
     data = read_file()
     n, bins, patches = plot_hist(data, title="Muon Pair Masses", x_lab="Mass ($GeV/c^2$)", y_lab="Frequency")
     peak_masses, peak_index = find_peak(x=bins[:-1], y=n)
-    stupid_peak = find_stupid_peak(x=bins[:-1], y=n)
+    # stupid_peak = find_stupid_peak(x=bins[:-1], y=n)
     differences = peak_masses - peak_masses[0]
     print("The muon pair masses are: %.3f, %.3f and %.3f GeV." % (peak_masses[0], peak_masses[1], peak_masses[2]))
     print("The Muon mass differences are: %.3f and %.3f GeV." %(differences[1], differences[2]))
