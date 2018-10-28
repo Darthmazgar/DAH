@@ -45,7 +45,7 @@ def noise_check(y, peaks, per=5):
     return peaks
 
 
-def find_peak(x, y, smoothing=3, percentage_peak=15, show_peaks=True, save=False, sv_nm="muon_with_peaks.pdf"):
+def find_peak(x, y, smoothing=3, percentage_peak=15, show_peaks=True, save=False, sv_nm="muon_with_peaks.pdf", show=False):
     per = 1 + percentage_peak / 100
     smoothing = int(len(y) * smoothing/100)
     peaks = []
@@ -73,7 +73,8 @@ def find_peak(x, y, smoothing=3, percentage_peak=15, show_peaks=True, save=False
         plt.plot(x_new, y_new, 'o')
         if save:
             plt.savefig(sv_nm)
-        # plt.show()  #########################################################################################################
+        if show:
+            plt.show()
     return peak_masses, peaks
 
 
@@ -87,13 +88,14 @@ def peak_analysis(y_data, x_data, peak_index):
         right_min = ind
         left_min = ind
         while next_less:
-            if y_data[ind] < np.average([y_data[ind+1], y_data[ind+2], y_data[ind+3]]):
+            if y_data[ind] < np.average(y_data[ind: ind+2]):
                 right_min = ind
                 next_less = False
             ind += 1
-        ind = peak
+
+        ind = peak  # Reset
         while prev_less:
-            if y_data[ind] < np.average([y_data[ind-1], y_data[ind+2], y_data[ind-3]]):  # could probs move these into the same loop
+            if y_data[ind] < np.average(y_data[ind: ind-2]):  # could probs move these into the same loop
                 left_min = ind
                 prev_less = False
             ind -= 1
@@ -140,8 +142,8 @@ def FWHM(peak_ind, ind_range, y_data, x_data):
                 one_side = True
         i += 1
         j -= 1
-    plt.axvline(x_data[right_lim], color='red')
-    plt.axvline(x_data[left_lim], color='red')
+    plt.axvline(x_data[right_lim], color='red', linewidth=.8)
+    plt.axvline(x_data[left_lim], color='red', linewidth=.8)
     plt.show()
 
     width = x_data[right_lim] - x_data[left_lim]
