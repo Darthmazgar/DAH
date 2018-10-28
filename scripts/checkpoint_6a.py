@@ -36,9 +36,12 @@ def noise_check(y, peaks, per=5):
             rem.append(i)  # not removing the 1st cause of the noise
         elif not np.isclose(a=y[i], b=y[i+1], atol=0.1*y[i]):  # attempt to remove massive spikes
             rem.append(i)
+        elif y[peaks[i]] < 400:  # Will only work fo this bin sizing
+            rem.append(i)
     for i in sorted(rem, reverse=True):
         del peaks[i]
     del peaks[len(peaks)-1]  # Removes the last data. This works for this data but possibly not generally :'(
+
     return peaks
 
 
@@ -80,7 +83,7 @@ def main():
     peak_masses, peak_index = find_peak(x=bins[:-1], y=n)
     # stupid_peak = find_stupid_peak(x=bins[:-1], y=n)
     # differences = peak_masses - peak_masses[0]
-    # print("The muon pair masses are: %.3f, %.3f and %.3f GeV." % (peak_masses[0], peak_masses[1], peak_masses[2]))
+    print("The muon pair masses are: %.3f, %.3f and %.3f GeV." % (peak_masses[0], peak_masses[1], peak_masses[2]))
     # print("The Muon mass differences are: %.3f and %.3f GeV." %(differences[1], differences[2]))
     # mins = peak_analysis(data, peak_index)peak_location
     # print(mins)
