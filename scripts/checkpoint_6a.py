@@ -76,6 +76,7 @@ def find_peak(x, y, smoothing=3, percentage_peak=15, show_peaks=True, save=False
         plt.show()
     return peak_masses, peaks
 
+
 def peak_analysis(y_data, x_data, peak_index):
     ranges = []
     indicies = []
@@ -86,13 +87,13 @@ def peak_analysis(y_data, x_data, peak_index):
         right_min = ind
         left_min = ind
         while next_less:
-            if y_data[ind] < np.average([y_data[ind+1], y_data[ind+2]]):
+            if y_data[ind] < np.average([y_data[ind+1], y_data[ind+2], y_data[ind+3]]):
                 right_min = ind
                 next_less = False
             ind += 1
         ind = peak
         while prev_less:
-            if y_data[ind] < np.average([y_data[ind-1], y_data[ind+2]]):
+            if y_data[ind] < np.average([y_data[ind-1], y_data[ind+2], y_data[ind-3]]):  # could probs move these into the same loop
                 left_min = ind
                 prev_less = False
             ind -= 1
@@ -105,13 +106,47 @@ def region_mean(x_data, ind_range):
     return np.average(x_data[ind_range[0]:ind_range[1]])
 
 
-def reigon_varience(x_data, ind_range):
+def region_variance(x_data, ind_range):
     return np.var(x_data[ind_range[0]:ind_range[1]])
 
 
-def reigon_stdev(x_data, ind_range):
+def region_stdev(x_data, ind_range):
     return np.std(x_data[ind_range[0]:ind_range[1]])
 
+
+def FWHM(peak_ind, ind_range, y_data, x_data):
+    avg_min = np.average([y_data[ind_range[0]], y_data[ind_range[1]]])
+    height = y_data[peak_ind] - avg_min  # To remove non flat minimums
+    half_max = height / 2
+
+    larger = True
+    i = peak_ind
+    j = peak_ind
+
+    one_side = False
+    while larger:
+
+        if y_data[i] <= (half_max + avg_min):
+            righ_lim = i
+            if one_side:
+                larger = False
+            else:
+                one_side = True
+        if y_data[j] <= (half_max + avg_min):
+            left_lim = j
+            if one_side:
+                larger = False
+            else:
+                one_side = True
+        i += 1
+        j -= 1
+
+    width = x_data[righ_lim] - x_data[left_lim]
+    return width
+
+
+def est_sigma(fwhm):
+    return fwhm / 2.35
 
 def main():
     data = read_file()
@@ -125,15 +160,23 @@ def main():
     # print(mass_ranges, index_ranges)
 
     peak_region_means = []
-    reigon_var = []
-    reigon_std = []
+    region_var = []
+    region_std = []
     for i in range(len(index_ranges)):
         peak_region_means.append(region_mean(x_data=bins, ind_range=index_ranges[i]))
-        reigon_var.append(reigon_varience(x_data=bins, ind_range=index_ranges[i]))
-        reigon_std.append(reigon_stdev(x_data=bins, ind_range=index_ranges[i]))
+        region_var.append(region_variance(x_data=bins, ind_range=index_ranges[i]))
+        region_std.append(region_stdev(x_data=bins, ind_range=index_ranges[i]))
+
         # print(peak_region_means[i])
         # print(reigon_var[i])
         # print(reigon_std[i])
+    # Still need to find out what std dev on the mean is?! Bias probs because left higher than right
+
+    fwhm = FWHM(peak_index[i], index_ranges[i], n, bins)
+    # print(fwhm)
+    sigma = est_sigma(fwhm)
+    # print(sigma)
+    print("1S peak of: (%.2f +/- %.2f) GeV." % (peak_masses[0], sigma))
 
 
 main()
