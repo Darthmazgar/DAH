@@ -76,17 +76,41 @@ def find_peak(x, y, smoothing=3, percentage_peak=15, show_peaks=True, save=False
         plt.show()
     return peak_masses, peaks
 
+def peak_analysis(y_data, x_data, peak_index):
+    ranges = []
+    indicies = []
+    for peak in peak_index:
+        ind = peak
+        next_less = True
+        prev_less = True
+        right_min = ind
+        left_min = ind
+        while next_less:
+            if y_data[ind] < np.average([y_data[ind+1], y_data[ind+2]]):
+                right_min = ind
+                next_less = False
+            ind += 1
+        ind = peak
+        while prev_less:
+            if y_data[ind] < np.average([y_data[ind-1], y_data[ind+2]]):
+                left_min = ind
+                prev_less = False
+            ind -= 1
+        ranges.append([x_data[left_min], x_data[right_min]])
+        indicies.append([left_min, right_min])
+    return ranges, indicies
+
 
 def main():
     data = read_file()
     n, bins, patches = plot_hist(data, title="Muon Pair Masses", x_lab="Mass ($GeV/c^2$)", y_lab="Frequency")
     peak_masses, peak_index = find_peak(x=bins[:-1], y=n)
     # stupid_peak = find_stupid_peak(x=bins[:-1], y=n)
-    # differences = peak_masses - peak_masses[0]
-    print("The muon pair masses are: %.3f, %.3f and %.3f GeV." % (peak_masses[0], peak_masses[1], peak_masses[2]))
+    differences = peak_masses - peak_masses[0]
+    # print("The muon pair masses are: %.3f, %.3f and %.3f GeV." % (peak_masses[0], peak_masses[1], peak_masses[2]))
     # print("The Muon mass differences are: %.3f and %.3f GeV." %(differences[1], differences[2]))
-    # mins = peak_analysis(data, peak_index)peak_location
-    # print(mins)
+    mass_ranges, index_ranges = peak_analysis(y_data=n, x_data=bins, peak_index=peak_index)  # peak_location
+    print(mass_ranges, index_ranges)
 
 
 main()
