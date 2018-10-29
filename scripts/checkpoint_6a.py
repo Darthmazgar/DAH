@@ -78,7 +78,7 @@ def find_peak(x, y, smoothing=3, percentage_peak=15, show_peaks=True, save=False
     return peak_masses, peaks
 
 
-def peak_analysis(y_data, x_data, peak_index):
+def peak_analysis(y_data, x_data, peak_index, disp_width=True):
     ranges = []
     indicies = []
     for peak in peak_index:
@@ -88,19 +88,26 @@ def peak_analysis(y_data, x_data, peak_index):
         right_min = ind
         left_min = ind
         while next_less:
-            if y_data[ind] < np.average(y_data[ind: ind+2]):
+            # if y_data[ind] < np.average(y_data[ind: ind+2]):
+            if y_data[ind] < np.average([y_data[ind+1], y_data[ind+2], y_data[ind+3]]):
                 right_min = ind
                 next_less = False
             ind += 1
 
         ind = peak  # Reset
         while prev_less:
-            if y_data[ind] < np.average(y_data[ind: ind-2]):  # could probs move these into the same loop
+            # if y_data[ind] < np.average(y_data[ind: ind-2]):  # could probs move these into the same loop
+            if y_data[ind] < np.average([y_data[ind-1], y_data[ind-2], y_data[ind-3]]):
+
                 left_min = ind
                 prev_less = False
             ind -= 1
         ranges.append([x_data[left_min], x_data[right_min]])
         indicies.append([left_min, right_min])
+        if disp_width:
+            plt.axvline(x_data[left_min], color='green', linewidth=.8)
+            plt.axvline(x_data[right_min], color='green', linewidth=.8)
+
     return ranges, indicies
 
 
@@ -116,7 +123,7 @@ def region_stdev(x_data, ind_range):
     return np.std(x_data[ind_range[0]:ind_range[1]])
 
 
-def FWHM(peak_ind, ind_range, y_data, x_data):
+def FWHM(peak_ind, ind_range, y_data, x_data, disp_half_width=True):
     avg_min = np.average([y_data[ind_range[0]], y_data[ind_range[1]]])
     height = y_data[peak_ind] - avg_min  # To remove non flat minimums
     half_max = height / 2
@@ -127,7 +134,6 @@ def FWHM(peak_ind, ind_range, y_data, x_data):
 
     one_side = False
     while larger:
-
         if y_data[i] <= (half_max + avg_min):
             right_lim = i
             if one_side:
@@ -142,9 +148,10 @@ def FWHM(peak_ind, ind_range, y_data, x_data):
                 one_side = True
         i += 1
         j -= 1
-    plt.axvline(x_data[right_lim], color='red', linewidth=.8)
-    plt.axvline(x_data[left_lim], color='red', linewidth=.8)
-    plt.show()
+    if disp_half_width:
+        plt.axvline(x_data[right_lim], color='red', linewidth=.8)
+        plt.axvline(x_data[left_lim], color='red', linewidth=.8)
+        plt.show()
 
     width = x_data[right_lim] - x_data[left_lim]
     return width
