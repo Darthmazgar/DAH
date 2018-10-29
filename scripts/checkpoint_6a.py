@@ -1,4 +1,3 @@
-# import pylab
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -9,7 +8,7 @@ def read_file(file="txt_files/upsilons-mass-xaa.txt"):
 
 
 def plot_hist(data, bins=225, title="", x_lab="", y_lab="", show=False, save=False, sv_nm="Upsilons_his.pdf"):
-    n, bins, patches = plt.hist(data, bins=bins) # , density=True)
+    n, bins, patches = plt.hist(data, bins=bins)  # , density=True)
     plt.xlabel(x_lab)
     plt.ylabel(y_lab)
     plt.title(title)
@@ -18,14 +17,6 @@ def plot_hist(data, bins=225, title="", x_lab="", y_lab="", show=False, save=Fal
     if show:
         plt.show()
     return n, bins, patches
-
-
-def find_stupid_peak(x, y, min_index, max_index):
-    y_max = y[min]  # you cant call variables min or max because they are key words
-    for i in range(x[min], x[max]): # min_index is the index of the x bin at the minimum position
-        if y[i] >= y[i-1]:
-            y_max = y[i]
-    return y_max
 
 
 def noise_check(y, peaks, per=5):
@@ -165,12 +156,10 @@ def main():
     data = read_file()
     n, bins, patches = plot_hist(data, title="Muon Pair Masses", x_lab="Mass ($GeV/c^2$)", y_lab="Frequency")
     peak_masses, peak_index = find_peak(x=bins[:-1], y=n)
-    # stupid_peak = find_stupid_peak(x=bins[:-1], y=n)
     differences = peak_masses - peak_masses[0]
-    # print("The muon pair masses are: %.3f, %.3f and %.3f GeV/c^2." % (peak_masses[0], peak_masses[1], peak_masses[2]))
-    # print("The Muon mass differences are: %.3f and %.3f GeV/c^2." %(differences[1], differences[2]))
+    print("The muon pair masses are: %.3f, %.3f and %.3f GeV/c^2." % (peak_masses[0], peak_masses[1], peak_masses[2]))
+    print("The Muon mass differences are: %.3f and %.3f GeV/c^2." %(differences[1], differences[2]))
     mass_ranges, index_ranges = peak_analysis(y_data=n, x_data=bins, peak_index=peak_index)  # peak_location
-    # print(mass_ranges, index_ranges)
 
     peak_region_means = []
     region_var = []
@@ -179,19 +168,15 @@ def main():
         peak_region_means.append(region_mean(x_data=bins, ind_range=index_ranges[i]))
         region_var.append(region_variance(x_data=bins, ind_range=index_ranges[i]))
         region_std.append(region_stdev(x_data=bins, ind_range=index_ranges[i]))
-
         # print(peak_region_means[i])
         # print(reigon_var[i])
         # print(reigon_std[i])
     # Still need to find out what std dev on the mean is?! Bias probs because left higher than right
 
     fwhm = FWHM(peak_index[0], index_ranges[0], n, bins)
-    # print(fwhm)
     sigma = est_sigma(fwhm)
-    # print(sigma)
     print("1S peak of: (%.2f +/- %.2f) GeV/c^2." % (peak_masses[0], sigma))
 
 
 main()
 
-# entries, binedges, patches = pylab.hist(xmass, bins = Nbins, range = [binMin,binMax])
