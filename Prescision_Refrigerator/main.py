@@ -1,4 +1,4 @@
-# from webiopi.devices.sensor.onewiretemp import DS18B20
+from webiopi.devices.sensor.onewiretemp import DS18B20
 import pylab
 import matplotlib.animation as animation
 import datetime
@@ -14,6 +14,8 @@ def main():
     cooler = Cooler()
     t0 = Thermometer(DS18B20(slave="28-000005e94da7"))
     t1 = Thermometer(DS18B20(slave="28-000006cb82c6"))
+    t0.get_tmp()
+    t0.print_temp()
 
 
 main()
