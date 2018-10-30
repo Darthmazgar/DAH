@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/checkpoint_6a.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/checkpoint_6a.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,12 +39,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="py" value="4972" />
-          <entry key="txt" value="838" />
+          <entry key="txt" value="853" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="838" />
+          <entry key="PLAIN_TEXT" value="853" />
           <entry key="Python" value="4972" />
         </counts>
       </usages-collector>
@@ -306,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540830282292</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Completing cp 6">
+      <created>1540912425023</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1540912425023</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -391,7 +397,8 @@
     <MESSAGE value="Still no minimums" />
     <MESSAGE value="Plot widths" />
     <MESSAGE value="Tidy up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tidy up" />
+    <MESSAGE value="Completing cp 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completing cp 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
