@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Fan.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/prescision_redrigerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/prescision_redrigerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +16,7 @@
     <SUITE FILE_PATH="coverage/DAH$p_n_junction3.coverage" NAME="p_n_junction3 Coverage Results" MODIFIED="1540905947868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Computing/Num_Rec/CP2" />
     <SUITE FILE_PATH="coverage/DAH$main.coverage" NAME="main Coverage Results" MODIFIED="1540915221603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator" />
     <SUITE FILE_PATH="coverage/DAH$checkpoint_6a.coverage" NAME="checkpoint_6a Coverage Results" MODIFIED="1540911586176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/DAH$tester.coverage" NAME="tester Coverage Results" MODIFIED="1540916275659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1879478870">
@@ -44,14 +42,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5494" />
-          <entry key="txt" value="871" />
+          <entry key="dummy" value="1" />
+          <entry key="py" value="5627" />
+          <entry key="txt" value="900" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="871" />
-          <entry key="Python" value="5494" />
+          <entry key="PLAIN_TEXT" value="901" />
+          <entry key="Python" value="5627" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -65,26 +64,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/prescision_redrigerator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-                <marker date="1540915058299" expanded="true" signature="331:370" ph="..." />
-                <marker date="1540915058299" expanded="true" signature="535:540" ph="..." />
-                <marker date="1540915058299" expanded="true" signature="682:711" ph="..." />
-                <marker date="1540915058299" expanded="true" signature="994:995" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="51">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -92,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -110,8 +93,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="238">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,9 +125,9 @@
         <option value="$PROJECT_DIR$/../../../Computing/Num_Rec/CP2/p_n_junction3.py" />
         <option value="$PROJECT_DIR$/scripts/checkpoint_6a.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/prescision_redrigerator.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Fan.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
       </list>
     </option>
@@ -207,7 +193,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.tester">
     <configuration name="checkpoint_6a" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DAH" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -274,13 +260,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tester" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DAH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prescision_Refrigerator" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prescision_Refrigerator/tester.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.checkpoint_6a" />
       <item itemvalue="Python.p_n_junction3" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.tester" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tester" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.checkpoint_6a" />
         <item itemvalue="Python.p_n_junction3" />
@@ -404,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540912601358</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Starting adding functionality">
+      <created>1540915289301</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1540915289301</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -492,7 +509,8 @@
     <MESSAGE value="Tidy up" />
     <MESSAGE value="Completing cp 6" />
     <MESSAGE value="Start Refrigerator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start Refrigerator" />
+    <MESSAGE value="Starting adding functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting adding functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -550,13 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Fan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -564,16 +575,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/prescision_redrigerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="255">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
@@ -585,10 +589,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="238">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
