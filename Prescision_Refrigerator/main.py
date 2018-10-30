@@ -2,6 +2,7 @@ from webiopi.devices.sensor.onewiretemp import DS18B20
 import pylab
 import matplotlib.animation as animation
 import datetime
+import time
 import numpy as np
 import RPi.GPIO as GPIO
 from Cooler import Cooler

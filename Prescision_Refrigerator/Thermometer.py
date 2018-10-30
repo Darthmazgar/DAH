@@ -15,3 +15,4 @@ class Thermometer(object):
 
     def get_tmp(self):
         return self.therm.getCelsius()
+
