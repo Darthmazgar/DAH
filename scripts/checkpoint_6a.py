@@ -156,9 +156,39 @@ def est_sigma(fwhm):
     return fwhm / 2.355
 
 
+def peak_region_an(peak, y_data, x_data, width):  # Width in GeV
+    i = peak
+    j = peak
+    while x_data[i] < x_data[peak] + width:
+        i += 1
+    while x_data[j] > x_data[peak] - width:
+        j -= 1
+    peak_region = [j, i]
+
+    # noise_region1 = [peak - 2*j, peak + 2*i]
+    # noise_region1 = [x_data[peak - 2*j: j], y_data[peak - 2*j: j]]
+    noise_region1 = [[x_data[x] for x in range((peak - 2*(peak-j)), j)], [y_data[y] for y in range((peak - 2*(peak-j)), j)]]
+    noise_region2 = [[x_data[x] for x in range(i, (peak + 2*(i-peak)))], [y_data[y] for y in range(i, (peak + 2*(i-peak)))]]
+    # noise_region2 = [x_data[peak + 2*i: i], y_data[peak + 2*i: i]]
+
+    reg_1_grad = np.divide(noise_region1[1], noise_region1[0])
+    reg_2_grad = np.divide(noise_region2[1], noise_region2[0])
+
+    reg_grad = reg_1_grad + reg_2_grad
+    # reg_grad = np.gradient(noise_region1, noise_region2)
+
+    avg_grad = -np.average(reg_grad)
+    y_intercept = np.average([y_data[i] for i in range(5)])
+    counts = 0
+    for x in range(j, i):
+        without_background = y_data[x] - (avg_grad*y_data[x] + y_intercept)
+        counts += without_background
+    return int(counts/ 100)
+
+
 def main():
     data = read_file()
-    n, bins, patches = plot_hist(data, title="Muon Pair Masses", x_lab="Mass ($GeV/c^2$)", y_lab="Frequency")
+    n, bins, patches = plot_hist(data, title="Muon Pair Masses", x_lab="Mass ($GeV/c^2$)", y_lab="Frequency (0.01GeV/c^2/bin)")
     peak_masses, peak_index = find_peak(x=bins[:-1], y=n)
     differences = peak_masses - peak_masses[0]
     print("The Muon pair masses are: %.3f, %.3f and %.3f GeV/c^2." % (peak_masses[0], peak_masses[1], peak_masses[2]))
@@ -173,8 +203,9 @@ def main():
         peak_region_means.append(region_mean(x_data=bins, ind_range=index_ranges[i]))
         region_var.append(region_variance(x_data=bins, ind_range=index_ranges[i]))
         region_std.append(region_stdev(x_data=bins, ind_range=index_ranges[i]))
-        # n = index_ranges[i][1] - index_ranges[i][0]
-        # std_err.append(std_err_mean(region_std, n))
+        no = index_ranges[i][1] - index_ranges[i][0]
+        # print(index_ranges[i][0])
+        std_err.append(std_err_mean(region_std, no))
         # print(peak_region_means[i])
         # print(reigon_var[i])
         # print(reigon_std[i])
@@ -183,8 +214,11 @@ def main():
 
     fwhm = FWHM(peak_index[0], index_ranges[0], n, bins)
     sigma = est_sigma(fwhm)
-    print("1S peak of: (%.2f +/- %.2f) GeV/c^2." % (peak_masses[0], sigma))
+    print("1s peak of: (%.2f +/- %.2f) GeV/c^2 using the standard error on the mean." % (peak_masses[0], std_err[0]))
+    print("1S peak of: (%.2f +/- %.2f) GeV/c^2 error from sigma value." % (peak_masses[0], sigma))
 
+    count = peak_region_an(peak_index[0], y_data=n, x_data=bins, width=0.150)
+    print("Number of counts contributing to the gaussian %d." % count)
 
 main()
 

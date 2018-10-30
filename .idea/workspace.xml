@@ -12,39 +12,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DAH$checkpoint_6a.coverage" NAME="checkpoint_6a Coverage Results" MODIFIED="1540823854709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/DAH$p_n_junction3.coverage" NAME="p_n_junction3 Coverage Results" MODIFIED="1540905947868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Computing/Num_Rec/CP2" />
+    <SUITE FILE_PATH="coverage/DAH$checkpoint_6a.coverage" NAME="checkpoint_6a Coverage Results" MODIFIED="1540911586176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1879478870">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="3719" />
-          <entry key="txt" value="831" />
+          <entry key="py" value="4972" />
+          <entry key="txt" value="838" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="831" />
-          <entry key="Python" value="3719" />
+          <entry key="PLAIN_TEXT" value="838" />
+          <entry key="Python" value="4972" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -60,10 +62,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/checkpoint_6a.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+            <state relative-caret-position="1686">
+              <caret line="217" column="69" selection-start-line="217" selection-start-column="69" selection-end-line="217" selection-end-column="69" />
               <folding>
-                <element signature="e#15#33#0" expanded="true" />
+                <marker date="1540911586154" expanded="true" signature="3632:3665" ph="..." />
+                <marker date="1540911586154" expanded="true" signature="4760:5848" ph="..." />
+                <marker date="1540911586154" expanded="true" signature="5859:5864" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,6 +86,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/../../../Computing/Num_Rec/CP2/p_n_junction3.py" />
         <option value="$PROJECT_DIR$/scripts/checkpoint_6a.py" />
       </list>
     </option>
@@ -142,7 +147,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.checkpoint_6a">
     <configuration name="checkpoint_6a" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DAH" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,9 +170,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="p_n_junction3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DAH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../Computing/Num_Rec/CP2" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../Computing/Num_Rec/CP2/p_n_junction3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.checkpoint_6a" />
+      <item itemvalue="Python.p_n_junction3" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.checkpoint_6a" />
+        <item itemvalue="Python.p_n_junction3" />
         <item itemvalue="Python.checkpoint_6a" />
       </list>
     </recent_temporary>
@@ -260,7 +292,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540823732005</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Tidy up">
+      <created>1540824099680</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1540824099680</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tidy up">
+      <created>1540830282292</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1540830282292</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -274,14 +320,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09701493" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09808102" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24034335" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20064378" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -295,7 +340,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.32995737" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.4163113" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -345,7 +390,24 @@
     <MESSAGE value="Not identifying the minimum correctly. Vertical lines could be made thinner or removed." />
     <MESSAGE value="Still no minimums" />
     <MESSAGE value="Plot widths" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plot widths" />
+    <MESSAGE value="Tidy up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tidy up" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/checkpoint_6a.py</url>
+          <line>179</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/checkpoint_6a.py</url>
+          <line>176</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/numpy/core/_methods.py">
@@ -355,12 +417,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Computing/Num_Rec/CP2/p_n_junction3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/checkpoint_6a.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="1686">
+          <caret line="217" column="69" selection-start-line="217" selection-start-column="69" selection-end-line="217" selection-end-column="69" />
           <folding>
-            <element signature="e#15#33#0" expanded="true" />
+            <marker date="1540911586154" expanded="true" signature="3632:3665" ph="..." />
+            <marker date="1540911586154" expanded="true" signature="4760:5848" ph="..." />
+            <marker date="1540911586154" expanded="true" signature="5859:5864" ph="..." />
           </folding>
         </state>
       </provider>
