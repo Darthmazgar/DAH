@@ -1,4 +1,5 @@
 **If Contributor**
+
   If working on a new machine then clone the repository.
     git clone https://github.com/Darthmazgar/DAH.git
   If working on an already cloned directory then pull most recent changes.
@@ -21,6 +22,7 @@
     git push origin BRANCH_NAME
    
 **If Not Contributor**
+
   Fork the repository (top right button), then create a new branch and follow through working on your 
   branch. Once complete and tested then create a pull request of your pushe work.
   
