@@ -13,8 +13,8 @@ from Fan import Fan
 
 def main():
     cooler = Cooler(GPIO=GPIO, input_pin=24)
-    t0 = Thermometer(DS18B20(slave="28-000005e94da7"), rpi=GPIO)
-    t1 = Thermometer(DS18B20(slave="28-000006cb82c6"))
+    high_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO)
+    low_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), GPIO=GPIO)
 
 
 main()
