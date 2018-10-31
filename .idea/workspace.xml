@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/checkpoint_1a.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/checkpoint_1a.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,32 +26,33 @@
           <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="12" />
+          <entry key="py" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="12" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="5627" />
-          <entry key="txt" value="900" />
+          <entry key="py" value="6640" />
+          <entry key="txt" value="921" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="901" />
-          <entry key="Python" value="5627" />
+          <entry key="PLAIN_TEXT" value="922" />
+          <entry key="Python" value="6640" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -63,11 +65,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="680">
+              <caret line="47" column="83" selection-start-line="47" selection-start-column="83" selection-end-line="47" selection-end-column="83" />
+              <folding>
+                <marker date="1540992424137" expanded="true" signature="529:590" ph="..." />
+                <marker date="1540992424137" expanded="true" signature="608:738" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="306">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -90,13 +96,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+            <state relative-caret-position="272">
+              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/tester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/checkpoint_1b.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/checkpoint_1a.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="e#22#45#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,9 +162,11 @@
         <option value="$PROJECT_DIR$/scripts/checkpoint_6a.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/prescision_redrigerator.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Fan.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/tester.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
+        <option value="$PROJECT_DIR$/scripts/checkpoint_1a.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
       </list>
     </option>
   </component>
@@ -292,8 +330,8 @@
       <list>
         <item itemvalue="Python.tester" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.checkpoint_6a" />
         <item itemvalue="Python.p_n_junction3" />
+        <item itemvalue="Python.checkpoint_6a" />
         <item itemvalue="Python.checkpoint_6a" />
       </list>
     </recent_temporary>
@@ -421,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540915289301</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Tester and more prep">
+      <created>1540916295723</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1540916295723</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -437,7 +482,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09808102" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09914712" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -510,7 +555,8 @@
     <MESSAGE value="Completing cp 6" />
     <MESSAGE value="Start Refrigerator" />
     <MESSAGE value="Starting adding functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting adding functionality" />
+    <MESSAGE value="Tester and more prep" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tester and more prep" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -540,9 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -562,9 +605,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="9" selection-end-column="39" />
-          <folding>
-            <element signature="e#9#63#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/prescision_redrigerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -575,40 +629,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/prescision_redrigerator.py">
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="272">
+          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
-            <marker date="1540915058299" expanded="true" signature="331:370" ph="..." />
-            <marker date="1540915058299" expanded="true" signature="535:540" ph="..." />
-            <marker date="1540915058299" expanded="true" signature="682:711" ph="..." />
-            <marker date="1540915058299" expanded="true" signature="994:995" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/tester.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/checkpoint_1b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/checkpoint_1a.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#22#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        <state relative-caret-position="680">
+          <caret line="47" column="83" selection-start-line="47" selection-start-column="83" selection-end-line="47" selection-end-column="83" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1540992424137" expanded="true" signature="529:590" ph="..." />
+            <marker date="1540992424137" expanded="true" signature="608:738" ph="..." />
           </folding>
         </state>
       </provider>
