@@ -18,4 +18,5 @@ def main():
     low_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), GPIO=GPIO)
 
 
+
 main()
