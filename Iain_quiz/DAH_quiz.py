@@ -4,7 +4,7 @@ import numpy as np
 
 def get_norm_numbers(mu, sigma, number):
     """
-    Generate a list of random numbers based around a normal distribution
+    Generate a list of random numbers (of length 'number') based around a normal distribution
     with params, mu and sigma.
     """
     return np.random.normal(mu, sigma, number)
@@ -22,8 +22,8 @@ def plot_hist(data, bins=150, title="", x_lab="", y_lab="", save=False, show=Tru
 
 
 def main():
-    mu = 0.0  # Define parameters.
-    sigma = 0.1
+    mu = 3  # Define parameters.
+    sigma = 2
 
     s = get_norm_numbers(mu, sigma, 1000000)
 
@@ -31,7 +31,7 @@ def main():
     bin_size = (np.max(s) - np.min(s))/ bins
 
     plot_hist(s, bins=bins, title="Normal Distribution Generated from Random Numbers\n$\sigma=%.1f$;  $\mu=%.1f$" % (sigma, mu),
-              x_lab="x Value", y_lab="Frequency [%.4f/bin]" % bin_size, save="normal2.jpg")
+              x_lab="x Value", y_lab="Frequency [%.4f/bin]" % bin_size)
 
     mean = np.mean(s)  # Calculate statistics about data.
     var = np.var(s)
