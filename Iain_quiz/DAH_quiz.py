@@ -22,8 +22,8 @@ def plot_hist(data, bins=150, title="", x_lab="", y_lab="", save=False, show=Tru
 
 
 def main():
-    mu = 3  # Define parameters.
-    sigma = 2
+    mu = 0.0  # Define parameters.
+    sigma = 0.1
 
     s = get_norm_numbers(mu, sigma, 1000000)
 
