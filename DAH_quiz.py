@@ -22,8 +22,8 @@ def plot_hist(data, bins=150, title="", x_lab="", y_lab="", save=False, show=Tru
 
 
 def main():
-    mu = 0  # Define parameters.
-    sigma = 0.1
+    mu = 3  # Define parameters.
+    sigma = 2
 
     s = get_norm_numbers(mu, sigma, 1000000)
 
@@ -31,7 +31,7 @@ def main():
     bin_size = (np.max(s) - np.min(s))/ bins
 
     plot_hist(s, bins=bins, title="Normal Distribution Generated from Random Numbers\n$\sigma=%.1f$;  $\mu=%.1f$" % (sigma, mu),
-              x_lab="x Value", y_lab="Frequency [%.4f/bin]" % bin_size)
+              x_lab="x Value", y_lab="Frequency [%.4f/bin]" % bin_size, save="normal2.jpg")
 
     mean = np.mean(s)  # Calculate statistics about data.
     var = np.var(s)
