@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Iain_quiz/DAH_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iain_quiz/DAH_quiz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iain_quiz/Quiz_code_img.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/Iain_quiz/Quiz_code_img.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iain_quiz/normal2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Iain_quiz/normal2.jpg" afterDir="false" />
+    <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="Ran to gen and save plots for printing">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,35 +28,35 @@
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="PNG" value="1" />
           <entry key="jpg" value="2" />
-          <entry key="py" value="17" />
+          <entry key="py" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="3" />
-          <entry key="Python" value="17" />
+          <entry key="Python" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="6699" />
+          <entry key="py" value="8000" />
           <entry key="txt" value="965" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="966" />
-          <entry key="Python" value="6699" />
+          <entry key="Python" value="8000" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -70,30 +70,41 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Iain_quiz/DAH_quiz.py">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
+            <state relative-caret-position="680">
+              <caret line="40" column="77" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#54#0" expanded="true" />
+                <marker date="1541448843222" expanded="true" signature="313:600" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Iain_quiz/outputs2.PNG">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Iain_quiz/normal2.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Iain_quiz/normal.jpg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-204">
+              <caret line="27" column="67" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1541448476498" expanded="true" signature="619:624" ph="..." />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -122,11 +133,11 @@
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Fan.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/tester.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
         <option value="$PROJECT_DIR$/scripts/checkpoint_1a.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
         <option value="$PROJECT_DIR$/DAH_quiz.py" />
         <option value="$PROJECT_DIR$/Iain_quiz/DAH_quiz.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
       </list>
     </option>
   </component>
@@ -157,7 +168,7 @@
             <path>
               <item name="DAH" type="b2602c69:ProjectViewProjectNode" />
               <item name="DAH" type="462c0819:PsiDirectoryNode" />
-              <item name="Iain_quiz" type="462c0819:PsiDirectoryNode" />
+              <item name="Prescision_Refrigerator" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -467,7 +478,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20575693" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20788912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -486,7 +497,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.2457356" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.2457356" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -601,37 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="64" column="48" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Fan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,37 +637,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="e#22#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DAH_quiz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Iain_quiz/normal.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Iain_quiz/normal2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Iain_quiz/outputs2.PNG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/DAH_quiz.py" />
     <entry file="file://$PROJECT_DIR$/Iain_quiz/DAH_quiz.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Iain_quiz/outputs2.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Iain_quiz/normal2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Iain_quiz/normal.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="27" column="67" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1541448476498" expanded="true" signature="619:624" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="77" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1541448843222" expanded="true" signature="313:600" ph="..." />
           </folding>
         </state>
       </provider>
