@@ -24,7 +24,7 @@ class Thermometer(object):
     def get_tmp(self):
         return self.therm.getCelsius()
 
-    def plot_tmp(self, title, x_lab, y_lab):
+    def plot_tmp(self, title="", x_lab="", y_lab=""):
         plt.clf()
         plt.title = title
         plt.xlabel(x_lab)

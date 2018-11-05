@@ -2,6 +2,7 @@ import time
 
 
 class Fan(object):
+    # TODO Practically work out how to power this and get it running as an additional bonus.
     def __init__(self):
         self.on_time = 0
         self.total_on_time = 0

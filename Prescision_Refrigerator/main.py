@@ -13,6 +13,7 @@ from Fan import Fan
 
 
 def wait():
+    # TODO This possibly needs to be in a class of its own.
     while True:
         print("Waiting to restart. press 'c' to continue.")
         for event in pg.pygame.event.get():
@@ -31,7 +32,7 @@ def main():
 
     print("Keyboard commands:\n    'o'= Turn on cooler.\n    'f'= Turn off cooler.\n    's'= Set aim temperature.\n")
 
-    while True:
+    while True:  # TODO Change to have a run function to leave main as a set up only once key input has been tested.
         for event in pg.pygame.event.get():  # idea for recieving input to set the state
             if event.type == pg.QUIT:
                 pg.pygame.quit()

@@ -7,6 +7,7 @@ import pygame.locals as pg
 
 class Cooler(object):
     def __init__(self, GPIO, tmp_aim, high_therm, low_therm, input_pin=24):
+        # TODO add vs for voltage supply v=P/I to get energy.
         self.ip = input_pin
         self.GPIO = GPIO
         self.tmp_aim = tmp_aim
@@ -29,6 +30,7 @@ class Cooler(object):
         return self.tmp_aim
 
     def get_total_on_time(self):
+        # TODO Test this.
         if self.on:
             return self.total_on_time + (time.time() - self.on_time)
         else:
@@ -48,6 +50,7 @@ class Cooler(object):
         return False
 
     def converge(self):
+        # TODO Possibly rethink name for something more appropriate.
         low_tmp = self.low_therm.get_tmp()
         high_tmp = self.high_therm.get_tmp()
         if low_tmp != self.tmp_aim:
@@ -60,10 +63,7 @@ class Cooler(object):
         return tmp_dif
 
     def loop(self):
-        """
-        The on time needs to correspond with the temp difference between tmp_aim and low_tmp
-        :return:
-        """
+        # TODO Change from while loops to a call once function to allow for keyboar input once that has been tested.
         low_tmp = self.low_therm.get_tmp()
         high_tmp = self.high_therm.get_tmp()
 
