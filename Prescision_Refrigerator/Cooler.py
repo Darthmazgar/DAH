@@ -28,6 +28,12 @@ class Cooler(object):
             print("Temperature set to %f.2 degrees." % self.tmp_aim)
         return self.tmp_aim
 
+    def get_total_on_time(self):
+        if self.on:
+            return self.total_on_time + (time.time() - self.on_time)
+        else:
+            return self.total_on_time
+
     def turn_on(self):
         self.GPIO.output(self.ip, self.GPIO.HIGH)
         self.on = True
