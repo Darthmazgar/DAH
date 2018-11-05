@@ -29,6 +29,8 @@ def main():
     low_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), GPIO=GPIO)
     cooler = Cooler(GPIO=GPIO, tmp_aim=5, high_therm=high_tmp, low_therm=low_tmp, input_pin=24)
 
+    print("Keyboard commands:\n    'o'= Turn on cooler.\n    'f'= Turn off cooler.\n    's'= Set aim temperature.\n")
+
     while True:
         for event in pg.pygame.event.get():  # idea for recieving input to set the state
             if event.type == pg.QUIT:
