@@ -6,27 +6,27 @@ import pygame.locals as pg
 
 
 class Cooler(object):
-    def __init__(self, gpio, tmp_aim, low_therm, input_pin=24):
+    def __init__(self, GPIO, tmp_aim, therm, input_pin=24):
         # TODO add vs for voltage supply v=P/I to get energy.
         self.ip = input_pin
-        self.GPIO = gpio
+        self.GPIO = GPIO
         self.tmp_aim = tmp_aim
-        self.low_therm = low_therm
+        self.therm = therm
         self.precision = .1  # change to pass in precision
-        self.max_on = 4  # Max on time for the cooler in seconds
-        gpio.setmode(gpio.BCM)
-        gpio.setup(self.ip, gpio.OUT)  # Set pin as an output
+        self.max_on = 4  # Max on time for the cooler in seconds   # pos not needed
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(self.ip, GPIO.OUT)  # Set pin as an output
         self.on_time = 0
         self.total_on_time = 0
         self.on = False
-        self.min_on_time = 2
-        
+        self.min_on_time = 2  # pos not needed
 
     def get_tmp_aim(self):
         return self.tmp_aim
 
     def set_tmp_aim(self, tmp, pr=False):
         self.tmp_aim = tmp
+        self.therm = tmp  # Reset tmp aim for the Thermometer class
         if pr:
             print("Temperature set to %.2f degrees." % self.tmp_aim)
         return self.tmp_aim
@@ -43,7 +43,7 @@ class Cooler(object):
         self.on = True
         self.on_time = time.time()
         # time_on =  # Know the on time and off time.
-        print("ON")
+        print("ON")  #
         return True
 
     def turn_off(self):
@@ -55,7 +55,7 @@ class Cooler(object):
 
     def converge(self):
         # TODO Possibly rethink name for something more appropriate.
-        low_tmp = self.low_therm.get_tmp()
+        low_tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - low_tmp)
 
         print(low_tmp)  # Remove later
@@ -69,9 +69,9 @@ class Cooler(object):
     
         return tmp_dif
 
-    def loop(self):
-        # TODO Change from while loops to a call once function to allow for keyboar input once that has been tested.
-        low_tmp = self.low_therm.get_tmp()
+    def loop(self):  # TODO Can probs get rid of this fn.
+        # TODO Change from while loops to a call once function to allow for keyboard input once that has been tested.
+        low_tmp = self.therm.get_tmp()
         # high_tmp = self.high_therm.get_tmp()
 
         while True:  # Maybe dont want to have this loop here if i want to get key input elsewhere.

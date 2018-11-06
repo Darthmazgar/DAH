@@ -5,9 +5,10 @@ import matplotlib.pyplot as plt
 class Thermometer(object):
     def __init__(self, address, gpio, tmp_aim=False, arr_len=50):
         self.therm = address
-        self.tmp_arr = np.zeros(arr_len)
+        self.tmp_arr = np.full(arr_len, self.get_tmp())  # changes from np.zeros so the full array is the initial tmp
         self.time_arr = np.arange(arr_len)  # Update with curr time every time the tmp is updated
         self.tmp_aim = tmp_aim
+
         plt.ion()
         self.fig = plt.figure()
         self.ax = self.fig.add_subplot(111)
@@ -24,12 +25,13 @@ class Thermometer(object):
         return tmp
 
     def get_tmp(self):
-        self.tmp_arr = np.roll(self.tmp_arr, -1) # maybe -1
+        self.tmp_arr = np.roll(self.tmp_arr, -1)
         tmp = self.therm.getCelsius()
         self.tmp_arr[len(self.tmp_arr) - 1] = tmp
         return tmp
 
     def plot_tmp(self, title="", x_lab="", y_lab=""):
+        # TODO Make title and labels work. ... I worked it out its because we never set any.
         self.ax.clear()
         self.ax.set_title = title
         self.ax.set_xlabel(x_lab)
