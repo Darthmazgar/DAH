@@ -30,8 +30,8 @@ def main():
     pygame.init()
     # high_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO)  # Probably need to change high_tmp to the Pelier tmp
     
-    low_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), gpio=GPIO)
-    cooler = Cooler(gpio=GPIO, tmp_aim=20, low_therm=low_tmp, input_pin=24)
+    low_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), gpio=GPIO, tmp_aim=21)  #When resetting tmp aim need to change this aswell
+    cooler = Cooler(gpio=GPIO, tmp_aim=21, low_therm=low_tmp, input_pin=24)
     # cooler.set_tmp_aim(25, pr=True)
     # print(cooler.get_tmp_aim())
     """cooler.turn_on()
@@ -59,6 +59,7 @@ def main():
                 cooler.set_tmp(tmp, pr=True)
 
         cooler.converge()
+        low_tmp.plot_tmp()
     
 
 main()

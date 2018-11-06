@@ -12,7 +12,7 @@ class Cooler(object):
         self.GPIO = gpio
         self.tmp_aim = tmp_aim
         self.low_therm = low_therm
-        self.precision = .25  # change to pass in precision
+        self.precision = .1  # change to pass in precision
         self.max_on = 4  # Max on time for the cooler in seconds
         gpio.setmode(gpio.BCM)
         gpio.setup(self.ip, gpio.OUT)  # Set pin as an output
