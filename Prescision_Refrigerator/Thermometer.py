@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 class Thermometer(object):
-    def __init__(self, GPIO, address, tmp_aim=False, arr_len=50):
+    def __init__(self, address, gpio, tmp_aim=False, arr_len=50):
         self.therm = address
         self.tmp_arr = np.zeros(arr_len)
         self.time_arr = np.zeros(arr_len)  # Update with curr time every time the tmp is updated
