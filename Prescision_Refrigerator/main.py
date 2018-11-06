@@ -19,7 +19,7 @@ def wait():
         print("Waiting to restart. press 'c' to continue.")
         for event in pygame.event.get():
             if event.type == QUIT:
-                pg.pygame.quit()
+                pygame.quit()
                 sys.exit()
             if event.type == K_c:
                 return False
@@ -28,17 +28,17 @@ def wait():
 def main():
     GPIO.setwarnings(False)
     pygame.init()
-    # high_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO)  # Probably need to change high_tmp to the Pelier tmp
+    # room_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO)  # Probably need to change high_tmp to the Pelier tmp
     
-    low_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), gpio=GPIO, tmp_aim=21)  #When resetting tmp aim need to change this aswell
-    cooler = Cooler(gpio=GPIO, tmp_aim=21, therm=low_tmp, input_pin=24)
+    water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), gpio=GPIO, tmp_aim=21)  #When resetting tmp aim need to change this aswell
+    cooler = Cooler(gpio=GPIO, tmp_aim=21, therm=water_tmp, input_pin=24)
     
     print("Keyboard commands:\n    'o'= Turn on cooler.\n    'f'= Turn off cooler.\n    's'= Set aim temperature.\n")
 
     while True:  # TODO Change to have a run function to leave main as a set up only once key input has been tested.
         for event in pygame.event.get():  # idea for recieving input to set the state
             if event.type == QUIT:
-                pg.pygame.quit()
+                pygame.quit()
                 sys.exit()
             if event.type == K_o:
                 cooler.turn_on()
@@ -48,9 +48,12 @@ def main():
             if event.type == K_s:
                 tmp = float(input("Set the aim temperature:"))
                 cooler.set_tmp(tmp, pr=True)
+            if event.type == K_p:
+                tmp = float(input("Set precision temperature range (i.e. +/- tmp):"))
+                cooler.set_precision(tmp, pr=True)
 
         cooler.converge()
-        low_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step", y_lab="Temperature $^oC$")
+        water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step", y_lab="Temperature $^oC$")
     
 
 main()

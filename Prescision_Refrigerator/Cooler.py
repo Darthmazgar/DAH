@@ -31,6 +31,18 @@ class Cooler(object):
             print("Temperature set to %.2f degrees." % self.tmp_aim)
         return self.tmp_aim
 
+    def get_precision(self):
+        return self.precision
+
+    def set_precision(self, pre, pr=False):
+        self.precision = pre
+        if pre < self.therm.min_precision:
+            self.precision = self.therm.min_precision
+            print("Set below minimum precision of thermometer.")
+        if pr:
+            print("Precision set to %.2f degrees." % self.precision)
+        return self.precision
+
     def get_total_on_time(self):
         # TODO Test this.
         if self.on:
@@ -55,19 +67,32 @@ class Cooler(object):
 
     def converge(self):
         # TODO Possibly rethink name for something more appropriate.
-        low_tmp = self.therm.get_tmp()
-        tmp_dif = np.abs(self.tmp_aim - low_tmp)
+        tmp = self.therm.get_tmp()
+        tmp_dif = np.abs(self.tmp_aim - tmp)
 
-        print(low_tmp)  # Remove later
-        # high_tmp = self.high_therm.get_tmp()
-        if low_tmp != self.tmp_aim:
-            if low_tmp < self.tmp_aim and tmp_dif > self.precision:
+        if tmp != self.tmp_aim:
+            if tmp < self.tmp_aim and tmp_dif > self.precision:
                 self.turn_off()
      
-            if low_tmp > self.tmp_aim and tmp_dif > self.precision:
+            if tmp > self.tmp_aim and tmp_dif > self.precision:
                 self.turn_on()
     
         return tmp_dif
+
+    def hysteretic_conv(self):
+        tmp = self.therm.get_tmp()
+        tmp_dif = np.abs(self.tmp_aim - tmp)
+
+        if tmp != self.tmp_aim:
+            if tmp < self.tmp_aim and tmp_dif > self.precision:
+                self.turn_off()
+
+            if tmp > self.tmp_aim and tmp_dif > self.precision/2:  # since room tmp is higher then reduce the heating time as it will take longet to cool than it will to heat.
+                self.turn_on()
+
+        return tmp_dif
+
+
 
     def loop(self):  # TODO Can probs get rid of this fn.
         # TODO Change from while loops to a call once function to allow for keyboard input once that has been tested.

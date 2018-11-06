@@ -8,6 +8,7 @@ class Thermometer(object):
         self.tmp_arr = np.full(arr_len, self.get_tmp())  # changes from np.zeros so the full array is the initial tmp
         self.time_arr = np.arange(arr_len)  # Update with curr time every time the tmp is updated
         self.tmp_aim = tmp_aim
+        self.min_precision = 0.0625  # ??????
 
         plt.ion()
         self.fig = plt.figure()
