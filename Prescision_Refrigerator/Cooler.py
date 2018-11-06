@@ -92,33 +92,3 @@ class Cooler(object):
 
         return tmp_dif
 
-
-
-    def loop(self):  # TODO Can probs get rid of this fn.
-        # TODO Change from while loops to a call once function to allow for keyboard input once that has been tested.
-        low_tmp = self.therm.get_tmp()
-        # high_tmp = self.high_therm.get_tmp()
-
-        while True:  # Maybe dont want to have this loop here if i want to get key input elsewhere.
-            
-            tmp_dif = self.converge()
-
-            """
-            if tmp_dif >= 3:  # some way of hysteretically converging on an aim_tmp
-                conv_time = self.max_on  # Max_on needs changes when going back to water
-            else:
-                conv_time = 1
-            # time.sleep(conv_time)
-            """
-
-            """if self.on:
-            time.sleep(5)  # Some rest time"""
-            # low_tmp = self.low_therm.get_tmp()
-
-            # high_tmp = self.high_therm.get_tmp()
-
-
-            # low_tmp = self.low_therm.get_tmp()
-            # print(self.get_total_on_time())
-
-            # time.sleep(2)
