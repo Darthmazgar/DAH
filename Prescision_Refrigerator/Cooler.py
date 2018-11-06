@@ -54,8 +54,7 @@ class Cooler(object):
         self.GPIO.output(self.ip, self.GPIO.HIGH)
         self.on = True
         self.on_time = time.time()
-        # time_on =  # Know the on time and off time.
-        print("ON")  #
+        print("ON")
         return True
 
     def turn_off(self):
@@ -80,6 +79,7 @@ class Cooler(object):
         return tmp_dif
 
     def hysteretic_conv(self):
+        # TODO Add more conv methods.
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
 
@@ -87,8 +87,9 @@ class Cooler(object):
             if tmp < self.tmp_aim and tmp_dif > self.precision:
                 self.turn_off()
 
-            if tmp > self.tmp_aim and tmp_dif > self.precision/2:  # since room tmp is higher then reduce the heating time as it will take longet to cool than it will to heat.
+            if tmp > self.tmp_aim and tmp_dif > self.precision / 2:  # since room tmp is higher then reduce the heating time as it will take longet to cool than it will to heat.
                 self.turn_on()
 
         return tmp_dif
 
+    # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
