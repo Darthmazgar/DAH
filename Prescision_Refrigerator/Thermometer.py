@@ -22,7 +22,7 @@ class Thermometer(object):
 
     def print_tmp(self):
         tmp = self.therm.getCelsius()
-        print(tmp)
+        print("Current temperature is at %.2f degrees celsius." % tmp)
         return tmp
 
     def get_tmp(self):
@@ -32,7 +32,6 @@ class Thermometer(object):
         return tmp
 
     def plot_tmp(self, title="", x_lab="", y_lab=""):
-        # TODO Make title and labels work. ... I worked it out its because we never set any.
         self.ax.clear()
         self.ax.set_title = title
         self.ax.set_xlabel(x_lab)
@@ -43,3 +42,4 @@ class Thermometer(object):
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
 
+    # TODO Add method to calc conv rate possible method on github ideas
