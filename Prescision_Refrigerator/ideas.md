@@ -19,11 +19,11 @@ Compare the energy used from the voltage and time to find the exp heat capacity 
 https://en.wikipedia.org/wiki/Rate_of_convergence
 
 http://hplgit.github.io/Programming-for-Computations/pub/p4c/._p4c-solarized-Python030.html
-'''python
+```python
 def rate(x, x_exact):
     e = [abs(x_ - x_exact) for x_ in x]
     q = [log(e[n+1]/e[n])/log(e[n]/e[n-1])
          for n in range(1, len(e)-1, 1)]
     return q
-'''
+```
 Have one them to measure the room tmp as a refference then compare if heating or cooling relative to room tmp.
