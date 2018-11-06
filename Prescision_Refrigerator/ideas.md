@@ -1,4 +1,5 @@
-#Different convergence methods#
+**Different convergence methods**
+
 Standard on/off
 
 Hysteretic loop, different for heating than for cooling.
@@ -9,6 +10,6 @@ scipy optimize. minimize?
 
 Use these then compare run times to cool from a temp to another. (relative to room tmp)
 
-#Cooling efficency#
+**Cooling efficency**
 
 Compare the energy used from the voltage and time to find the exp heat capacity and compare this to a known heat capacity of water.
