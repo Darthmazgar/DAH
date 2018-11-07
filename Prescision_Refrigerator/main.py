@@ -60,6 +60,8 @@ def main():
 
         cooler.converge()
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step", y_lab="Temperature $^oC$")
+        water_tmp.convergence_rate()
+        water_tmp.plot_rate(title="Convergence Rate with Time.", x_lab="Time Step", y_lab="Rate $^oC / s$")
     
 
 main()
