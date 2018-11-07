@@ -26,4 +26,7 @@ def rate(x, x_exact):
          for n in range(1, len(e)-1, 1)]
     return q
 ```
+
+https://en.wikipedia.org/wiki/Rate_of_convergence
+
 Have one them to measure the room tmp as a refference then compare if heating or cooling relative to room tmp.
