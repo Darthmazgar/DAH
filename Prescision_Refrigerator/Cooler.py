@@ -88,3 +88,8 @@ class Cooler(object):
         return tmp_dif
 
     # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
+
+    def energy_used(self, v, I):
+        P = I * v
+        E = P * self.get_total_on_time()
+        return E
