@@ -1,9 +1,8 @@
 from webiopi.devices.sensor.onewiretemp import DS18B20
-import pylab
-import matplotlib.animation as animation
-import datetime
-import time
-import numpy as np
+import pylab  # can get rid
+import datetime  # can get rid
+import time  # can get rid
+import numpy as np  # can get rid
 import sys
 import pygame
 from pygame.locals import *
@@ -28,7 +27,7 @@ def wait():
 def main():
     GPIO.setwarnings(False)
     pygame.init()
-    # room_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO)  # Probably need to change high_tmp to the Pelier tmp
+    # room_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO)
     
     water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), gpio=GPIO, tmp_aim=21)  # When resetting tmp aim need to change this aswell
     cooler = Cooler(gpio=GPIO, tmp_aim=21, therm=water_tmp, input_pin=24)
@@ -45,7 +44,7 @@ def main():
                 if event.key == K_f:
                     cooler.turn_off()
                     print("Cooler manually turned off.")
-                    wait()  # if turned of then dont turn straight back on again.
+                    wait()  # if turned of then don't turn straight back on again.
                 if event.key == K_s:
                     tmp = float(input("Set the aim temperature:"))
                     cooler.set_tmp(tmp, pr=True)
@@ -59,9 +58,11 @@ def main():
                 sys.exit()
 
         cooler.converge()
-        water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step", y_lab="Temperature $^oC$")
+        water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
+                           y_lab="Temperature $^oC$", draw=False)
         water_tmp.convergence_rate()
-        water_tmp.plot_rate(title="Convergence Rate with Time.", x_lab="Time Step", y_lab="Rate $^oC / s$")
+        water_tmp.plot_rate(title="Convergence Rate with Time.", x_lab="Time Step",
+                            y_lab="Rate $^oC / s$", draw=True)
     
 
 main()

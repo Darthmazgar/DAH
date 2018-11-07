@@ -1,25 +1,20 @@
 import time
-import matplotlib.pyplot as plt
-import collections
 import numpy as np
-import pygame.locals as pg
 
 
 class Cooler(object):
-    def __init__(self, GPIO, tmp_aim, therm, input_pin=24):
+    def __init__(self, GPIO, tmp_aim, therm, precision=.1, input_pin=24):
         # TODO add vs for voltage supply v=P/I to get energy.
         self.ip = input_pin
         self.GPIO = GPIO
         self.tmp_aim = tmp_aim
         self.therm = therm
-        self.precision = .1  # change to pass in precision
-        self.max_on = 4  # Max on time for the cooler in seconds   # pos not needed
+        self.precision = precision  # change to pass in precision
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.ip, GPIO.OUT)  # Set pin as an output
         self.on_time = 0
         self.total_on_time = 0
         self.on = False
-        self.min_on_time = 2  # pos not needed
 
     def get_tmp_aim(self):
         return self.tmp_aim
@@ -54,14 +49,14 @@ class Cooler(object):
         self.GPIO.output(self.ip, self.GPIO.HIGH)
         self.on = True
         self.on_time = time.time()
-        print("ON")
+        # print("ON")
         return True
 
     def turn_off(self):
         self.GPIO.output(self.ip, self.GPIO.LOW)
         self.on = False
         self.total_on_time += time.time() - self.on_time  # Set the total on time
-        print("OFF")
+        # print("OFF")
         return False
 
     def converge(self):
