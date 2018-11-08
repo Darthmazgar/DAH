@@ -1,4 +1,5 @@
 from webiopi.devices.sensor.onewiretemp import DS18B20
+from webiopi.devices.sensor.onewiretemp import DS18S20  # Needs checked
 import pylab  # can get rid
 import datetime  # can get rid
 import time  # can get rid
@@ -27,11 +28,13 @@ def wait():
 def main():
     GPIO.setwarnings(False)
     pygame.init()
-    # room_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO)
-    
-    water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), gpio=GPIO, tmp_aim=21)  # When resetting tmp aim need to change this aswell
-    cooler = Cooler(gpio=GPIO, tmp_aim=21, therm=water_tmp, input_pin=24)
-    
+
+    tmp_aim = 21
+
+    room_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO, name="room")
+    water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), gpio=GPIO, name="water", tmp_aim=tmp_aim)  # When resetting tmp aim need to change this aswell
+    cooler = Cooler(gpio=GPIO, tmp_aim=tmp_aim, therm=water_tmp, input_pin=24)
+
     print("Keyboard commands:\n    'o' = Turn on cooler.\n    'f' = Turn off cooler.\n    's' = Set aim temperature.\n"
           "    'p' = Set precision of cooler.\n    't' = Show current Temperature.\n")
 
@@ -63,6 +66,6 @@ def main():
         water_tmp.convergence_rate()
         water_tmp.plot_rate(title="Convergence Rate with Time.", x_lab="Time Step",
                             y_lab="Rate $^oC / s$", draw=True)
-    
+
 
 main()

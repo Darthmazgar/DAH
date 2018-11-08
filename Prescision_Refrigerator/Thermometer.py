@@ -4,9 +4,10 @@ import time
 
 
 class Thermometer(object):
-    def __init__(self, address, gpio, tmp_aim=False, arr_len=50):
+    def __init__(self, address, gpio, name, tmp_aim=False, arr_len=50):
+        self.name = ""
         self.therm = address
-        self.tmp_arr = np.full(arr_len, self.get_tmp())  # changes from np.zeros so the full array is the initial tmp
+        self.tmp_arr = np.full(arr_len, self.print_tmp())  # changes from np.zeros so the full array is the initial tmp
         self.time_arr = np.arange(arr_len)  # Update with curr time every time the tmp is updated
         self.rate_arr = np.zeros(arr_len)
         self.tmp_aim = tmp_aim
@@ -26,7 +27,7 @@ class Thermometer(object):
 
     def print_tmp(self):
         tmp = self.therm.getCelsius()
-        print("Current temperature is at %.2f degrees celsius." % tmp)
+        print("Current %s temperature is at %.2f degrees celsius." % (self.name, tmp))
         return tmp
 
     def get_tmp(self):
