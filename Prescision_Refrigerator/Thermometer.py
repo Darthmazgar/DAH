@@ -41,7 +41,7 @@ class Thermometer(object):
         self.ax1.set_title = title
         self.ax1.set_xlabel(x_lab)
         self.ax1.set_ylabel(y_lab)
-        self.ax1.plot(self.time_arr, self.tmp_arr)  # where( )
+        self.ax1.plot(self.time_arr, self.tmp_arr)
         if self.tmp_aim:
             self.ax1.axhline(y=self.tmp_aim, color=(1, 0, 0), linewidth=.8)
         if draw:  # Possibly dont need this as it will hopefully only be clearing one subplot
