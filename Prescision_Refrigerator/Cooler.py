@@ -88,6 +88,7 @@ class Cooler(object):
         return tmp_dif
 
     # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
+    # TODO Redo timings as it wasnt working!
 
     def energy_used(self, v, I):
         p = I * v
@@ -103,4 +104,4 @@ class Cooler(object):
         eff = cooling_energy / energy_used
         if pr:
             print("The efficency of this cooler is: %.3f." % eff)
-        return eff 
+        return eff
