@@ -38,7 +38,7 @@ class Thermometer(object):
 
     def plot_tmp(self, title="", x_lab="", y_lab="", draw=True):
         self.ax1.clear()
-        self.ax1.set_title = title
+        self.ax1.set_title(title)
         self.ax1.set_xlabel(x_lab)
         self.ax1.set_ylabel(y_lab)
         self.ax1.plot(self.time_arr, self.tmp_arr)
@@ -66,7 +66,7 @@ class Thermometer(object):
     def plot_rate(self,  title="", x_lab="", y_lab="", draw=True):
         self.ax2.clear()
         self.ax2.axhline(y=np.average(self.rate_arr), color=(1, 0, 0), linewidth=.8)
-        self.ax2.set_title = title
+        self.ax2.set_title(title)
         self.ax2.set_xlabel(x_lab)
         self.ax2.set_ylabel(y_lab)
         self.ax2.plot(self.time_arr, self.rate_arr)
@@ -74,4 +74,3 @@ class Thermometer(object):
             plt.tight_layout()
             self.fig.canvas.draw()
             self.fig.canvas.flush_events()
-

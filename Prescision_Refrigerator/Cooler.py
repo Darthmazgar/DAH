@@ -67,10 +67,10 @@ class Cooler(object):
         if tmp != self.tmp_aim:
             if tmp < self.tmp_aim and tmp_dif > self.precision:
                 self.turn_off()
-     
+
             if tmp > self.tmp_aim and tmp_dif > self.precision:
                 self.turn_on()
-    
+
         return tmp_dif
 
     def hysteretic_conv(self):
@@ -88,3 +88,19 @@ class Cooler(object):
         return tmp_dif
 
     # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
+
+    def energy_used(self, v, I):
+        p = I * v
+        energy_used = p * self.get_total_on_time()
+        return energy_used
+
+    def energy_cooling_water(self, ti, mass, c=4186):  # c in J/kg/K
+        delta_t = ti - (self.aim_tmp - self.precision)
+        cooling_energy = c * m * delta_t
+        return cooling_energy
+
+    def efficency(self, energy_used, cooling_energy, pr=True):
+        eff = cooling_energy / energy_used
+        if pr:
+            print("The efficency of this cooler is: %.3f." % eff)
+        return eff 
