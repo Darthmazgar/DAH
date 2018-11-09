@@ -38,6 +38,10 @@ class Thermometer(object):
         self.tmp_arr[len(self.tmp_arr) - 1] = tmp
         return tmp
 
+    def get_rate(self, range=3):
+        """Return the avg rate over the last range time steps."""
+        return np.average(self.rate_arr[-range:])
+
     def plot_tmp(self, title="", x_lab="", y_lab="", draw=True):
         self.ax1.clear()
         self.ax1.set_title(title)
