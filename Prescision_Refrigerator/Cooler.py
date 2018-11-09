@@ -3,18 +3,20 @@ import numpy as np
 
 
 class Cooler(object):
-    def __init__(self, GPIO, tmp_aim, therm, precision=.1, input_pin=24):
+    def __init__(self, GPIO, tmp_aim, therm, name, precision=.1, input_pin=24):
         # TODO add vs for voltage supply v=P/I to get energy.
         self.ip = input_pin
         self.GPIO = GPIO
         self.tmp_aim = tmp_aim
         self.therm = therm
+        self.name = name
         self.precision = precision  # change to pass in precision
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.ip, GPIO.OUT)  # Set pin as an output
         self.on_time = 0
         self.total_on_time = 0
         self.on = False
+        self.first_on = False
 
     def get_tmp_aim(self):
         return self.tmp_aim
@@ -23,7 +25,7 @@ class Cooler(object):
         self.tmp_aim = tmp
         self.therm = tmp  # Reset tmp aim for the Thermometer class
         if pr:
-            print("Temperature set to %.2f degrees." % self.tmp_aim)
+            print("Temperature aim set to %.2f degrees." % self.tmp_aim)
         return self.tmp_aim
 
     def get_precision(self):
@@ -35,7 +37,7 @@ class Cooler(object):
             self.precision = self.therm.min_precision
             print("Set below minimum precision of thermometer.")
         if pr:
-            print("Precision set to %.2f degrees." % self.precision)
+            print("Precision of %s set to %.2f degrees." % (self.name, self.precision))
         return self.precision
 
     def get_total_on_time(self):
@@ -67,10 +69,10 @@ class Cooler(object):
         if tmp != self.tmp_aim:
             if tmp < self.tmp_aim and tmp_dif > self.precision:
                 self.turn_off()
-     
+
             if tmp > self.tmp_aim and tmp_dif > self.precision:
                 self.turn_on()
-    
+
         return tmp_dif
 
     def hysteretic_conv(self):
@@ -87,4 +89,28 @@ class Cooler(object):
 
         return tmp_dif
 
+    def tom_conv(self):
+        # The conv method Tom came up with on wed that we lost :'(
+        pass
+
+    def pre_empt_conv(self):
+        pass
+
     # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
+    # TODO Redo timings as it wasnt working!
+
+    def energy_used(self, v, I):
+        p = I * v
+        energy_used = p * self.get_total_on_time()
+        return energy_used
+
+    def energy_cooling_water(self, ti, mass, c=4186):  # c in J/kg/K
+        delta_t = ti - (self.aim_tmp - self.precision)
+        cooling_energy = c * m * delta_t
+        return cooling_energy
+
+    def efficency(self, energy_used, cooling_energy, pr=True):
+        eff = cooling_energy / energy_used
+        if pr:
+            print("The efficency of the %s cooler is: %.3f." % (self.name, eff))
+        return eff

@@ -4,19 +4,21 @@ import time
 
 
 class Thermometer(object):
-    def __init__(self, address, gpio, tmp_aim=False, arr_len=50):
+    def __init__(self, address, gpio, name, tmp_aim=False, arr_len=50, show=False):
+        self.name = ""
         self.therm = address
-        self.tmp_arr = np.full(arr_len, self.get_tmp())  # changes from np.zeros so the full array is the initial tmp
+        self.tmp_arr = np.full(arr_len, self.print_tmp())  # changes from np.zeros so the full array is the initial tmp
         self.time_arr = np.arange(arr_len)  # Update with curr time every time the tmp is updated
         self.rate_arr = np.zeros(arr_len)
         self.tmp_aim = tmp_aim
         self.min_precision = 0.0625  # ??????
         self.last_time = 0
 
-        plt.ion()
-        self.fig = plt.figure()
-        self.ax1 = self.fig.add_subplot(211)
-        self.ax2 = self.fig.add_subplot(212)
+        if show:
+            plt.ion()
+            self.fig = plt.figure()
+            self.ax1 = self.fig.add_subplot(211)
+            self.ax2 = self.fig.add_subplot(212)
 
     def cels_to_K(self, cels):
         return cels + 273
@@ -26,7 +28,7 @@ class Thermometer(object):
 
     def print_tmp(self):
         tmp = self.therm.getCelsius()
-        print("Current temperature is at %.2f degrees celsius." % tmp)
+        print("Current %s temperature is at %.2f degrees celsius." % (self.name, tmp))
         return tmp
 
     def get_tmp(self):
@@ -36,9 +38,13 @@ class Thermometer(object):
         self.tmp_arr[len(self.tmp_arr) - 1] = tmp
         return tmp
 
+    def get_rate(self, range=3):
+        """Return the avg rate over the last range time steps."""
+        return np.average(self.rate_arr[-range:])
+
     def plot_tmp(self, title="", x_lab="", y_lab="", draw=True):
         self.ax1.clear()
-        self.ax1.set_title = title
+        self.ax1.set_title(title)
         self.ax1.set_xlabel(x_lab)
         self.ax1.set_ylabel(y_lab)
         self.ax1.plot(self.time_arr, self.tmp_arr)
@@ -66,7 +72,7 @@ class Thermometer(object):
     def plot_rate(self,  title="", x_lab="", y_lab="", draw=True):
         self.ax2.clear()
         self.ax2.axhline(y=np.average(self.rate_arr), color=(1, 0, 0), linewidth=.8)
-        self.ax2.set_title = title
+        self.ax2.set_title(title)
         self.ax2.set_xlabel(x_lab)
         self.ax2.set_ylabel(y_lab)
         self.ax2.plot(self.time_arr, self.rate_arr)
@@ -75,3 +81,18 @@ class Thermometer(object):
             self.fig.canvas.draw()
             self.fig.canvas.flush_events()
 
+    def conv_score(self, room_tmp, start=0, stop=len(self.tmp_arr), E_used=False):
+        # Calculates how long was spent at the tmp aim and gives a scoreself.
+        delta_t = 0
+        time = stop - start
+        norm_fact = 1
+
+        for i in range(start, stop):
+            deltat += np.pow((self.tmp_arr[i] - self.tmp_aim), 2)
+        score = np.abs(room_tmp - self.tmp_aim) / (delta_t**2 / time)
+        score *= norm_fact
+        if E_used:
+            norm_fact = 1
+            score /= E_used
+            score *= norm_fact
+        return score
