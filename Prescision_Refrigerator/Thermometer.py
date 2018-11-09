@@ -4,7 +4,7 @@ import time
 
 
 class Thermometer(object):
-    def __init__(self, address, gpio, name, tmp_aim=False, arr_len=50):
+    def __init__(self, address, gpio, name, tmp_aim=False, arr_len=50, show=False):
         self.name = ""
         self.therm = address
         self.tmp_arr = np.full(arr_len, self.print_tmp())  # changes from np.zeros so the full array is the initial tmp
@@ -14,10 +14,11 @@ class Thermometer(object):
         self.min_precision = 0.0625  # ??????
         self.last_time = 0
 
-        plt.ion()
-        self.fig = plt.figure()
-        self.ax1 = self.fig.add_subplot(211)
-        self.ax2 = self.fig.add_subplot(212)
+        if show:
+            plt.ion()
+            self.fig = plt.figure()
+            self.ax1 = self.fig.add_subplot(211)
+            self.ax2 = self.fig.add_subplot(212)
 
     def cels_to_K(self, cels):
         return cels + 273
