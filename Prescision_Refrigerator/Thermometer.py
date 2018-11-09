@@ -76,11 +76,18 @@ class Thermometer(object):
             self.fig.canvas.draw()
             self.fig.canvas.flush_events()
 
-    def conv_score(self, room_rmp, start=0, stop=len(self.tmp_arr), E_used=False):
+    def conv_score(self, room_tmp, start=0, stop=len(self.tmp_arr), E_used=False):
         # Calculates how long was spent at the tmp aim and gives a scoreself.
         delta_t = 0
-        range = stop - start
+        time = stop - start
+        norm_fact = 1
+
         for i in range(start, stop):
             deltat += np.pow((self.tmp_arr[i] - self.tmp_aim), 2)
-        score = delta_t / range
+        score = np.abs(room_tmp - self.tmp_aim) / (delta_t**2 / time)
+        score *= norm_fact
+        if E_used:
+            norm_fact = 1
+            score /= E_used
+            score *= norm_fact
         return score
