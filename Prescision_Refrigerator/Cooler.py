@@ -3,12 +3,13 @@ import numpy as np
 
 
 class Cooler(object):
-    def __init__(self, GPIO, tmp_aim, therm, precision=.1, input_pin=24):
+    def __init__(self, GPIO, tmp_aim, therm, name, precision=.1, input_pin=24):
         # TODO add vs for voltage supply v=P/I to get energy.
         self.ip = input_pin
         self.GPIO = GPIO
         self.tmp_aim = tmp_aim
         self.therm = therm
+        self.name = name
         self.precision = precision  # change to pass in precision
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.ip, GPIO.OUT)  # Set pin as an output
@@ -24,7 +25,7 @@ class Cooler(object):
         self.tmp_aim = tmp
         self.therm = tmp  # Reset tmp aim for the Thermometer class
         if pr:
-            print("Temperature set to %.2f degrees." % self.tmp_aim)
+            print("Temperature aim set to %.2f degrees." % self.tmp_aim)
         return self.tmp_aim
 
     def get_precision(self):
@@ -36,7 +37,7 @@ class Cooler(object):
             self.precision = self.therm.min_precision
             print("Set below minimum precision of thermometer.")
         if pr:
-            print("Precision set to %.2f degrees." % self.precision)
+            print("Precision of %s set to %.2f degrees." % (self.name, self.precision))
         return self.precision
 
     def get_total_on_time(self):
@@ -111,5 +112,5 @@ class Cooler(object):
     def efficency(self, energy_used, cooling_energy, pr=True):
         eff = cooling_energy / energy_used
         if pr:
-            print("The efficency of this cooler is: %.3f." % eff)
+            print("The efficency of the %s cooler is: %.3f." % (self.name, eff))
         return eff
