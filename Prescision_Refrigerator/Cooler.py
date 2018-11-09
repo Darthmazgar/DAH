@@ -15,6 +15,7 @@ class Cooler(object):
         self.on_time = 0
         self.total_on_time = 0
         self.on = False
+        self.first_on = False
 
     def get_tmp_aim(self):
         return self.tmp_aim
@@ -86,6 +87,13 @@ class Cooler(object):
                 self.turn_on()
 
         return tmp_dif
+
+    def tom_conv(self):
+        # The conv method Tom came up with on wed that we lost :'(
+        pass
+
+    def pre_empt_conv(self):
+        pass
 
     # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
     # TODO Redo timings as it wasnt working!
