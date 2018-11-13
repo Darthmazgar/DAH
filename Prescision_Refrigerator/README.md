@@ -1,4 +1,4 @@
-#Precision Refrigerator #
+# Precision Refrigerator #
 
 Python 3.6.1 code which works with a Raspberry Pi interface to precisely Control
 the temperature of a substance by alternating the state of a Peltier heat pump
@@ -7,7 +7,7 @@ operating on a separate current loop which is toggled using a transistor switch.
 The system is made up of two main classes; Thermometer and Cooler with an optional add on of Fan 
 (still incomplete).
 
-##Cooler ##
+## Cooler ##
 
 The cooler class controls the state of the cooling chip. Depending on the 
 temperature of a substance recorded by a thermometer which is controlled by the Thermometer class.
@@ -33,5 +33,5 @@ On the first cooling phase the efficiency of the cooling system will be calculat
   
 
 
-##Thermometer ##
+## Thermometer ##
 
