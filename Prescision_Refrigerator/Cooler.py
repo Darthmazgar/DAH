@@ -91,8 +91,23 @@ class Cooler(object):
 
     def tom_conv(self):
         # The conv method Tom came up with on wed that we lost :'(
-        pass
+        tmp = self.therm.get_tmp()
+        tmp_dif = np.abs(self.tmp_aim - tmp)
+        upper = self.upper_limit()
 
+        if tmp != self.tmp_aim:
+            if tmp < self.tmp_aim and tmp_dif > upper:
+                self.turn_off()
+
+            if tmp > self.tmp_aim and tmp_dif > self.precision:
+                self.turn_on()
+            
+    def upper_limit(self):
+        # calcs upper limit based on ambient and aim temparatures
+        amb = self.amb_therm.get_tmp()
+        upper = 1 / (self.amb_therm - self.tmp_aim)
+        return upper
+       
     def pre_empt_conv(self):
         pass
 
