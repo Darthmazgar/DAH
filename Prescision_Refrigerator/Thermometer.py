@@ -11,7 +11,7 @@ class Thermometer(object):
         self.time_arr = np.arange(arr_len)  # Update with curr time every time the tmp is updated
         self.rate_arr = np.zeros(arr_len)
         self.tmp_aim = tmp_aim
-        self.min_precision = 0.0625  # ??????
+        self.min_precision = 0.0625  
         self.last_time = 0
 
         if show:
@@ -58,16 +58,15 @@ class Thermometer(object):
     # TODO Add method to calc conv rate possible method on github ideas
 
     def convergence_rate(self):
-        # TODO Test this!
         self.rate_arr = np.roll(self.rate_arr, -1)
         elapsed_time = time.time() - self.last_time
         tmp_dif = self.tmp_arr[-1] - self.tmp_aim
         last_tmp_dif = self.tmp_arr[-2] - self.tmp_aim
         change = tmp_dif - last_tmp_dif
         rate = change / elapsed_time
-        rate = np.abs(rate)  # only +ve rates
+        #  rate = np.abs(rate)  # only +ve rates
         self.rate_arr[len(self.rate_arr) - 1] = rate
-        return rate
+        return rate, np.average(self.rate_arr)
 
     def plot_rate(self,  title="", x_lab="", y_lab="", draw=True):
         self.ax2.clear()
