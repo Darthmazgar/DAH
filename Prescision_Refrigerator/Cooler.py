@@ -18,6 +18,10 @@ class Cooler(object):
         self.total_on_time = 0
         self.on = False
         self.first_on = False
+        self.init_time = 0
+        self.first_off = False
+        self.final_time = 0
+        self.eff_calced = False
 
     def get_tmp_aim(self):
         return self.tmp_aim
@@ -52,6 +56,9 @@ class Cooler(object):
         self.GPIO.output(self.ip, self.GPIO.HIGH)
         self.on = True
         self.on_time = time.time()
+        if not self.first_on:
+            self.first_on = True
+            self.init_time = time.time()
         # print("ON")
         return True
 
@@ -59,6 +66,9 @@ class Cooler(object):
         self.GPIO.output(self.ip, self.GPIO.LOW)
         self.on = False
         self.total_on_time += time.time() - self.on_time  # Set the total on time
+        if not self.first_off and self.first_on:
+            self.first_off = True
+            self.final_time = time.time()
         # print("OFF")
         return False
 
@@ -90,36 +100,29 @@ class Cooler(object):
 
         return tmp_dif
 
-    def tom_conv(self):
+    def rate_limit_conv(self):
         # The conv method Tom came up with on wed that we lost :'(
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
         upper = self.upper_limit()
 
         if tmp != self.tmp_aim:
-            if tmp < self.tmp_aim and tmp_dif > upper:
+            if tmp < self.tmp_aim and tmp_dif > self.precision:
                 self.turn_off()
 
 
-            if tmp > self.tmp_aim and tmp_dif > self.precision:
+            if tmp > self.tmp_aim and tmp_dif > upper:
                 self.turn_on()
             
 
     def upper_limit(self):
         # calcs upper limit based on ambient and aim temparatures
         amb = self.amb_therm.get_tmp()
-        upper = 1 / (self.amb_therm - self.tmp_aim)
+        upper = self.precision / (amb - self.tmp_aim)
         return upper
 
-
-          
-            
-    def upper_limit(self):
-        # calcs upper limit based on ambient and aim temparatures
-        amb = self.amb_therm.get_tmp()
-        upper = 1 / (self.amb_therm - self.tmp_aim)
-        return upper
-       
+      
+         
     def pre_empt_conv(self):
         pass
 
@@ -127,17 +130,22 @@ class Cooler(object):
     # TODO Redo timings as it wasnt working!
 
     def energy_used(self, v, I):
-        p = I * v
-        energy_used = p * self.get_total_on_time()
-        return energy_used
-
-    def energy_cooling_water(self, ti, mass, c=4186):  # c in J/kg/K
-        delta_t = ti - (self.aim_tmp - self.precision)
-        cooling_energy = c * mass * delta_t
+        if self.first_on and self.first_off:
+            p = I * v
+            time = self.final_time - self.init_time
+            energy_used = p * time
+            return energy_used
+        else:
+            return 0
+            
+    def energy_water(self, mass, c=4186):  # c in J/kg/K
+        delta_tmp = (self.tmp_aim + self.precision) - (self.tmp_aim - self.precision)
+        cooling_energy = c * mass * delta_tmp
         return cooling_energy
 
-    def efficency(self, energy_used, cooling_energy, pr=True):
-        eff = cooling_energy / energy_used
-        if pr:
-            print("The efficency of the %s cooler is: %.3f." % (self.name, eff))
-        return eff
+    def efficiency(self, mass, v, i):
+        if(self.first_on and self.first_off and not self.eff_calced):
+            self.eff_calced = True
+            eff = self.energy_water(mass) / self.energy_used(v, i)
+            print("The efficiency of the refrigerator is: %.3f%." %(eff*100))
+            return eff
