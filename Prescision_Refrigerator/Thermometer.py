@@ -4,8 +4,8 @@ import time
 
 
 class Thermometer(object):
-    def __init__(self, address, gpio, name, tmp_aim=False, arr_len=50, show=False):
-        self.name = ""
+    def __init__(self, address, GPIO, name, tmp_aim=False, arr_len=50, show=False):
+        self.name = name
         self.therm = address
         self.tmp_arr = np.full(arr_len, self.print_tmp())  # changes from np.zeros so the full array is the initial tmp
         self.time_arr = np.arange(arr_len)  # Update with curr time every time the tmp is updated
@@ -81,7 +81,9 @@ class Thermometer(object):
             self.fig.canvas.draw()
             self.fig.canvas.flush_events()
 
-    def conv_score(self, room_tmp, start=0, stop=len(self.tmp_arr), E_used=False):
+    def conv_score(self, room_tmp, start=0, stop=False, E_used=False):
+        if stop:
+            stop = len(self.tmp_arr)
         # Calculates how long was spent at the tmp aim and gives a scoreself.
         delta_t = 0
         time = stop - start
