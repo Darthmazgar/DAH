@@ -120,8 +120,15 @@ class Cooler(object):
         upper = 1 / (self.amb_therm - self.tmp_aim)
         return upper
        
-    def pre_empt_conv(self):
-        pass
+    def pre_empt_conv(self, rate, avg_rate):
+        tmp = self.therm.get_tmp()
+        tmp_dif = np.abs(self.tmp_aim - tmp)
+        if rate >= 0 and tmp_dif < 5 * rate:  # If heating takes about 5 seconds to create a change
+            self.turn_on()
+        elif tmp < self.tmp_aim - self.precision: # If cooling
+            self.turn_off()
+            
+        
 
     # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
     # TODO Redo timings as it wasnt working!
