@@ -11,7 +11,7 @@ class Thermometer(object):
         self.time_arr = np.arange(arr_len)  # Update with curr time every time the tmp is updated
         self.rate_arr = np.zeros(arr_len)
         self.tmp_aim = tmp_aim
-        self.min_precision = 0.0625  # ??????
+        self.min_precision = 0.0625  
         self.last_time = 0
 
         if show:
@@ -58,7 +58,6 @@ class Thermometer(object):
     # TODO Add method to calc conv rate possible method on github ideas
 
     def convergence_rate(self):
-        # TODO Test this!
         self.rate_arr = np.roll(self.rate_arr, -1)
         elapsed_time = time.time() - self.last_time
         tmp_dif = self.tmp_arr[-1] - self.tmp_aim
