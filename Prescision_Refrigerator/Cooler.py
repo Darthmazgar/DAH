@@ -100,6 +100,7 @@ class Cooler(object):
             if tmp < self.tmp_aim and tmp_dif > upper:
                 self.turn_off()
 
+
             if tmp > self.tmp_aim and tmp_dif > self.precision:
                 self.turn_on()
             
@@ -110,6 +111,15 @@ class Cooler(object):
         upper = 1 / (self.amb_therm - self.tmp_aim)
         return upper
 
+
+          
+            
+    def upper_limit(self):
+        # calcs upper limit based on ambient and aim temparatures
+        amb = self.amb_therm.get_tmp()
+        upper = 1 / (self.amb_therm - self.tmp_aim)
+        return upper
+       
     def pre_empt_conv(self):
         pass
 
