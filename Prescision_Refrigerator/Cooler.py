@@ -123,7 +123,8 @@ class Cooler(object):
     def pre_empt_conv(self, rate, avg_rate):
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
-        if rate >= 0 and tmp_dif < 5 * rate:  # If heating takes about 5 seconds to create a change
+        avg_len = 5
+        if rate >= 0 and tmp_dif < avg_len * rate:  # If heating takes about 5 seconds to create a change
             self.turn_on()
         elif tmp < self.tmp_aim - self.precision: # If cooling
             self.turn_off()
