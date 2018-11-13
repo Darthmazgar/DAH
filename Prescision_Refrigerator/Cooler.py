@@ -52,14 +52,14 @@ class Cooler(object):
         self.GPIO.output(self.ip, self.GPIO.HIGH)
         self.on = True
         self.on_time = time.time()
-        # print("ON")
+        print("Cooling chip: ON")
         return True
 
     def turn_off(self):
         self.GPIO.output(self.ip, self.GPIO.LOW)
         self.on = False
         self.total_on_time += time.time() - self.on_time  # Set the total on time
-        # print("OFF")
+        print("Cooling chip: OFF")
         return False
 
     def converge(self):
