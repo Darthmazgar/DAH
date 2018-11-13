@@ -56,10 +56,11 @@ class Cooler(object):
         self.GPIO.output(self.ip, self.GPIO.HIGH)
         self.on = True
         self.on_time = time.time()
+
         if not self.first_on:
             self.first_on = True
             self.init_time = time.time()
-        # print("ON")
+        print("Cooling chip: ON")
         return True
 
     def turn_off(self):
@@ -69,7 +70,7 @@ class Cooler(object):
         if not self.first_off and self.first_on:
             self.first_off = True
             self.final_time = time.time()
-        # print("OFF")
+        print("Cooling chip: OFF")
         return False
 
     def converge(self):
@@ -119,12 +120,22 @@ class Cooler(object):
         # calcs upper limit based on ambient and aim temparatures
         amb = self.amb_therm.get_tmp()
         upper = self.precision / (amb - self.tmp_aim)
+        return upper          
+            
+    def upper_limit(self):
+        # calcs upper limit based on ambient and aim temparatures
+        amb = self.amb_therm.get_tmp()
+        upper = 1 / (self.amb_therm - self.tmp_aim)
         return upper
+       
+    def pre_empt_conv(self, rate, avg_rate):
+        tmp = self.therm.get_tmp()
+        tmp_dif = np.abs(self.tmp_aim - tmp)
+        if rate >= 0 and tmp_dif < 5 * rate:  # If heating takes about 5 seconds to create a change
+            self.turn_on()
+        elif tmp < self.tmp_aim - self.precision: # If cooling
+            self.turn_off()
 
-      
-         
-    def pre_empt_conv(self):
-        pass
 
     # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
     # TODO Redo timings as it wasnt working!
