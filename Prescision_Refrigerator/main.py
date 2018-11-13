@@ -1,8 +1,5 @@
 from webiopi.devices.sensor.onewiretemp import DS18B20
-from webiopi.devices.sensor.onewiretemp import DS18S20  # Needs checked
-import pylab  # can get rid
-import datetime  # can get rid
-import time  # can get rid
+from webiopi.devices.sensor.onewiretemp import DS18S20
 import numpy as np  # can get rid
 import sys
 import pygame
@@ -14,7 +11,6 @@ from Fan import Fan
 
 
 def wait():
-    # TODO This possibly needs to be in a class of its own.
     while True:
         print("Waiting to restart. press 'c' to continue.")
         for event in pygame.event.get():
@@ -41,7 +37,7 @@ def main():
     water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), GPIO=GPIO, name="water", tmp_aim=tmp_aim, show=True, arr_len=test_range)  # When resetting tmp aim need to change this aswell
     cooler = Cooler(GPIO=GPIO, tmp_aim=tmp_aim, therm=water_tmp, tmp_amb=room_tmp, name="Peltier", precision=precision, input_pin=24)
 
-    
+
     print("Keyboard commands:\n    'o' = Turn on cooler.\n    'f' = Turn off cooler.\n    's' = Set aim temperature.\n"
           "    'p' = Set precision of cooler.\n    't' = Show current Temperature.\n")
 
@@ -66,7 +62,7 @@ def main():
             if event.type == QUIT:
                 pygame.quit()  # Possibly just quit()
                 sys.exit()
-    
+
         cooler.rate_limit_conv()
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
                            y_lab="Temperature $^oC$", draw=False, smooth=True)
@@ -77,8 +73,8 @@ def main():
         eff = cooler.efficiency(mass, v, i)
         if eff:
             count += 1
-            
+
         if count == test_range:
             water_tmp.conv_score(precision, start=0, stop=test_range)
-            
+
 main()

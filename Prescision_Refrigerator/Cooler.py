@@ -4,7 +4,6 @@ import numpy as np
 
 class Cooler(object):
     def __init__(self, GPIO, tmp_aim, therm, tmp_amb, name, precision=.1, input_pin=24):
-        # TODO add vs for voltage supply v=P/I to get energy.
         self.ip = input_pin
         self.GPIO = GPIO
         self.tmp_aim = tmp_aim
@@ -46,7 +45,6 @@ class Cooler(object):
         return self.precision
 
     def get_total_on_time(self):
-        # TODO Test this.
         if self.on:
             return self.total_on_time + (time.time() - self.on_time)
         else:
@@ -62,7 +60,7 @@ class Cooler(object):
         if not self.first_on:
             self.first_on = True
             self.init_time = time.time()
-        
+
         return True
 
     def turn_off(self):
@@ -74,11 +72,10 @@ class Cooler(object):
         if not self.first_off and self.first_on:
             self.first_off = True
             self.final_time = time.time()
-        
+
         return False
 
     def converge(self):
-        # TODO Possibly rethink name for something more appropriate.
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
 
@@ -92,7 +89,6 @@ class Cooler(object):
         return tmp_dif
 
     def hysteretic_conv(self):
-        # TODO Add more conv methods.
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
 
@@ -106,7 +102,6 @@ class Cooler(object):
         return tmp_dif
 
     def rate_limit_conv(self):
-        # The conv method Tom came up with on wed that we lost :'(
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
         upper = self.upper_limit()
@@ -115,17 +110,16 @@ class Cooler(object):
             if tmp < self.tmp_aim and tmp_dif > self.precision:
                 self.turn_off()
 
-
             if tmp > self.tmp_aim and tmp_dif > upper:
                 self.turn_on()
-            
+
 
     def upper_limit(self):
         # calcs upper limit based on ambient and aim temparatures
         amb = self.amb_therm.get_tmp()
         upper = self.precision / (amb - self.tmp_aim)
-        return upper          
-       
+        return upper
+
     def pre_empt_conv(self, rate, avg_rate):
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
@@ -133,10 +127,6 @@ class Cooler(object):
             self.turn_on()
         elif tmp < self.tmp_aim - self.precision: # If cooling
             self.turn_off()
-
-
-    # TODO Add methods to calculate energy consumed to then be used with a therm method for calc experimental heat capacity
-    # TODO Redo timings as it wasnt working!
 
     def energy_used(self, v, I):
         if self.first_on and self.first_off:
@@ -146,7 +136,7 @@ class Cooler(object):
             return energy_used
         else:
             return 0
-            
+
     def energy_water(self, mass, c=4186):  # c in J/kg/K
         delta_tmp = (self.tmp_aim + self.precision) - (self.tmp_aim - self.precision)
         cooling_energy = c * mass * delta_tmp

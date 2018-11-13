@@ -7,10 +7,10 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 # Define the pin number for the LED
-LED0 = 24
+cooler = 24
 
 # Control the LED
-GPIO.setup(LED0, GPIO.OUT) # Set Pin as output
-GPIO.output(LED0, GPIO.HIGH) # Turn on the LED
+GPIO.setup(cooler, GPIO.OUT) # Set Pin as output
+GPIO.output(cooler, GPIO.HIGH) # Turn on the LED
 time.sleep(5)
-GPIO.output(LED0, GPIO.LOW) # Turn off the LED
+GPIO.output(cooler, GPIO.LOW) # Turn off the LED

@@ -86,7 +86,7 @@ class Thermometer(object):
             self.ax2.plot(new, sm)
         if not smooth or smooth == 2:
             self.ax2.plot(self.time_arr, self.rate_arr)
-        if draw:  # Possibly dont need this as it will hopfully only be clearing one subplot
+        if draw: 
             plt.tight_layout()
             self.fig.canvas.draw()
             self.fig.canvas.flush_events()
