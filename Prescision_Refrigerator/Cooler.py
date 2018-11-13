@@ -156,7 +156,7 @@ class Cooler(object):
                 self.turn_on()
 
     def upper_limit(self):
-        # calcs upper limit based on ambient and aim temparatures
+        # Calculates upper limit based on ambient and aim temperatures
         amb = self.amb_therm.get_tmp()
         upper = self.precision / (amb - self.tmp_aim)
         return upper
