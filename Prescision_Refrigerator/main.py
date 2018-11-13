@@ -31,9 +31,9 @@ def main():
 
     tmp_aim = 21
 
-    room_tmp = Thermometer(DS18B20(slave="28-000005e94da7"), GPIO=GPIO, name="room")
+    room_tmp = Thermometer(DS18S20(slave="28-000005e94da7"), GPIO=GPIO, name="room")
     water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), gpio=GPIO, name="water", tmp_aim=tmp_aim, show=True)  # When resetting tmp aim need to change this aswell
-    cooler = Cooler(gpio=GPIO, tmp_aim=tmp_aim, therm=water_tmp, name="Peltier", input_pin=24)
+    cooler = Cooler(gpio=GPIO, tmp_aim=tmp_aim, therm=water_tmp, tmp_amb=room_tmp, name="Peltier", input_pin=24)
 
     print("Keyboard commands:\n    'o' = Turn on cooler.\n    'f' = Turn off cooler.\n    's' = Set aim temperature.\n"
           "    'p' = Set precision of cooler.\n    't' = Show current Temperature.\n")

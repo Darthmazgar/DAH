@@ -3,12 +3,13 @@ import numpy as np
 
 
 class Cooler(object):
-    def __init__(self, GPIO, tmp_aim, therm, name, precision=.1, input_pin=24):
+    def __init__(self, GPIO, tmp_aim, therm, tmp_amb, name, precision=.1, input_pin=24):
         # TODO add vs for voltage supply v=P/I to get energy.
         self.ip = input_pin
         self.GPIO = GPIO
         self.tmp_aim = tmp_aim
         self.therm = therm
+        self.amb_therm = tmp_amb
         self.name = name
         self.precision = precision  # change to pass in precision
         GPIO.setmode(GPIO.BCM)
@@ -91,7 +92,23 @@ class Cooler(object):
 
     def tom_conv(self):
         # The conv method Tom came up with on wed that we lost :'(
-        pass
+        tmp = self.therm.get_tmp()
+        tmp_dif = np.abs(self.tmp_aim - tmp)
+        upper = self.upper_limit()
+
+        if tmp != self.tmp_aim:
+            if tmp < self.tmp_aim and tmp_dif > upper:
+                self.turn_off()
+
+            if tmp > self.tmp_aim and tmp_dif > self.precision:
+                self.turn_on()
+            
+
+    def upper_limit(self):
+        # calcs upper limit based on ambient and aim temparatures
+        amb = self.amb_therm.get_tmp()
+        upper = 1 / (self.amb_therm - self.tmp_aim)
+        return upper
 
     def pre_empt_conv(self):
         pass
@@ -106,7 +123,7 @@ class Cooler(object):
 
     def energy_cooling_water(self, ti, mass, c=4186):  # c in J/kg/K
         delta_t = ti - (self.aim_tmp - self.precision)
-        cooling_energy = c * m * delta_t
+        cooling_energy = c * mass * delta_t
         return cooling_energy
 
     def efficency(self, energy_used, cooling_energy, pr=True):
