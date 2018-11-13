@@ -54,23 +54,27 @@ class Cooler(object):
 
     def turn_on(self):
         self.GPIO.output(self.ip, self.GPIO.HIGH)
+        if not self.on:
+            print("Cooling chip: ON")
         self.on = True
         self.on_time = time.time()
 
         if not self.first_on:
             self.first_on = True
             self.init_time = time.time()
-        print("Cooling chip: ON")
+        
         return True
 
     def turn_off(self):
         self.GPIO.output(self.ip, self.GPIO.LOW)
+        if self.on:
+            print("Cooling chip: OFF")
         self.on = False
         self.total_on_time += time.time() - self.on_time  # Set the total on time
         if not self.first_off and self.first_on:
             self.first_off = True
             self.final_time = time.time()
-        print("Cooling chip: OFF")
+        
         return False
 
     def converge(self):
@@ -121,12 +125,6 @@ class Cooler(object):
         amb = self.amb_therm.get_tmp()
         upper = self.precision / (amb - self.tmp_aim)
         return upper          
-            
-    def upper_limit(self):
-        # calcs upper limit based on ambient and aim temparatures
-        amb = self.amb_therm.get_tmp()
-        upper = 1 / (self.amb_therm - self.tmp_aim)
-        return upper
        
     def pre_empt_conv(self, rate, avg_rate):
         tmp = self.therm.get_tmp()
@@ -158,5 +156,7 @@ class Cooler(object):
         if(self.first_on and self.first_off and not self.eff_calced):
             self.eff_calced = True
             eff = self.energy_water(mass) / self.energy_used(v, i)
-            print("The efficiency of the refrigerator is: %.3f%." %(eff*100))
+            print("The efficiency of the refrigerator is: %.3f %%." %(eff*100))
             return eff
+        else:
+            return False

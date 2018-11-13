@@ -29,15 +29,16 @@ def main():
     GPIO.setwarnings(False)
     pygame.init()
 
-    tmp_aim = 23.9
+    tmp_aim = 21.5
     precision = 0.0625
     mass = 0.05
     v = 3.
     i = 1.5
-
+    count = 0
+    test_range = 100
 
     room_tmp = Thermometer(DS18S20(slave="10-000802deb0fc"), GPIO=GPIO, name="room")
-    water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), GPIO=GPIO, name="water", tmp_aim=tmp_aim, show=True)  # When resetting tmp aim need to change this aswell
+    water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), GPIO=GPIO, name="water", tmp_aim=tmp_aim, show=True, arr_len=test_range)  # When resetting tmp aim need to change this aswell
     cooler = Cooler(GPIO=GPIO, tmp_aim=tmp_aim, therm=water_tmp, tmp_amb=room_tmp, name="Peltier", precision=precision, input_pin=24)
 
     
@@ -68,10 +69,16 @@ def main():
     
         cooler.rate_limit_conv()
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
-                           y_lab="Temperature $^oC$", draw=False)
+                           y_lab="Temperature $^oC$", draw=False, smooth=True)
         rate, avg_rate = water_tmp.convergence_rate()
         water_tmp.plot_rate(title="Convergence Rate with Time.", x_lab="Time Step",
                             y_lab="Rate $^oC / s$", draw=True)
 
-        cooler.efficiency(mass, v, i)
+        eff = cooler.efficiency(mass, v, i)
+        if eff:
+            count += 1
+            
+        if count == test_range:
+            water_tmp.conv_score(precision, start=0, stop=test_range)
+            
 main()

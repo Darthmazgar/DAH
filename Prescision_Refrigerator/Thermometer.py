@@ -1,10 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+from scipy.interpolate import spline
 
 
 class Thermometer(object):
-    def __init__(self, address, GPIO, name, tmp_aim=False, arr_len=50, show=False):
+    def __init__(self, address, GPIO, name, tmp_aim=False, arr_len=500, show=False):
         self.name = name
         self.therm = address
         self.tmp_arr = np.full(arr_len, self.print_tmp())  # changes from np.zeros so the full array is the initial tmp
@@ -42,12 +43,17 @@ class Thermometer(object):
         """Return the avg rate over the last range time steps."""
         return np.average(self.rate_arr[-range:])
 
-    def plot_tmp(self, title="", x_lab="", y_lab="", draw=True):
+    def plot_tmp(self, title="", x_lab="", y_lab="", draw=True, smooth=True):
         self.ax1.clear()
         self.ax1.set_title(title)
         self.ax1.set_xlabel(x_lab)
         self.ax1.set_ylabel(y_lab)
-        self.ax1.plot(self.time_arr, self.tmp_arr)
+        if smooth:
+            new = np.linspace(self.time_arr[0], self.time_arr[-1], 300)
+            smooth = spline(self.time_arr, self.tmp_arr, new)
+            self.ax1.plot(new, smooth)
+        else:
+            self.ax1.plot(self.time_arr, self.tmp_arr)
         if self.tmp_aim:
             self.ax1.axhline(y=self.tmp_aim, color=(1, 0, 0), linewidth=.8)
         if draw:  # Possibly dont need this as it will hopefully only be clearing one subplot
@@ -68,32 +74,30 @@ class Thermometer(object):
         self.rate_arr[len(self.rate_arr) - 1] = rate
         return rate, np.average(self.rate_arr)
 
-    def plot_rate(self,  title="", x_lab="", y_lab="", draw=True):
+    def plot_rate(self,  title="", x_lab="", y_lab="", draw=True, smooth=2):
         self.ax2.clear()
         self.ax2.axhline(y=np.average(self.rate_arr), color=(1, 0, 0), linewidth=.8)
         self.ax2.set_title(title)
         self.ax2.set_xlabel(x_lab)
         self.ax2.set_ylabel(y_lab)
-        self.ax2.plot(self.time_arr, self.rate_arr)
+        if smooth == 1 or smooth == 2:
+            new = np.linspace(self.time_arr[0], self.time_arr[-1], 300)
+            sm = spline(self.time_arr, self.rate_arr, new)
+            self.ax2.plot(new, sm)
+        if not smooth or smooth == 2:
+            self.ax2.plot(self.time_arr, self.rate_arr)
         if draw:  # Possibly dont need this as it will hopfully only be clearing one subplot
             plt.tight_layout()
             self.fig.canvas.draw()
             self.fig.canvas.flush_events()
 
-    def conv_score(self, room_tmp, start=0, stop=False, E_used=False):
-        if stop:
-            stop = len(self.tmp_arr)
-        # Calculates how long was spent at the tmp aim and gives a scoreself.
-        delta_t = 0
-        time = stop - start
-        norm_fact = 1
-
-        for i in range(start, stop):
-            deltat += np.pow((self.tmp_arr[i] - self.tmp_aim), 2)
-        score = np.abs(room_tmp - self.tmp_aim) / (delta_t**2 / time)
-        score *= norm_fact
-        if E_used:
-            norm_fact = 1
-            score /= E_used
-            score *= norm_fact
+    def conv_score(self, precision, start=0, stop=50):
+        ran_low = self.tmp_aim - precision
+        ran_high = self.tmp_aim + precision
+        count = 0 
+        for tmp in self.tmp_arr[start:stop]:
+            if tmp > ran_high or tmp < ran_low:
+                count += 1
+        test_range = stop - start
+        score = count / test_range
         return score
