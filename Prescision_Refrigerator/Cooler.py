@@ -107,9 +107,6 @@ class Cooler(object):
 
         return False
 
-    def get_conv_methods(self):
-        return [converge(), hysteretic_conv(), rate_limit_conv(), pre_empt_conv()]
-
     def converge(self):
         """
         Method to set the state of the cooling chip to converge on the aim_tmp.
@@ -164,14 +161,18 @@ class Cooler(object):
         upper = self.precision / (amb - self.tmp_aim)
         return upper
 
-    def pre_empt_conv(self):
-        rate = self.therm.get_rate()
+    def pre_empt_conv(self, rate):
+        """
+
+        :param rate: Average temperature rate of change over the last 5 time steps in degrees / s.
+        :return:
+        """
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
-        if rate >= 0 and tmp_dif < 5 * rate:  # If heating takes about 5 seconds to create a change
-            self.turn_on()
-        elif tmp < self.tmp_aim - self.precision: # If cooling
+        if rate <= 0 and tmp_dif < 5 * rate:  # If cooling and close to aim tmp turn off.
             self.turn_off()
+        elif rate > 0 and tmp_dif < 3*rate:  # If heating and close to aim tmp turn on.
+            self.turn_on()
 
     def energy_used(self, v, I):
         """

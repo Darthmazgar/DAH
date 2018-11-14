@@ -94,7 +94,7 @@ class Thermometer(object):
         change = tmp_dif - last_tmp_dif
         rate = change / elapsed_time  # Rate given by the change in temperature divided by the time taken for the change.
         self.rate_arr[len(self.rate_arr) - 1] = rate
-        return rate, np.average(self.rate_arr)
+        return rate, np.average(self.rate_arr[-5:])
 
     def plot_rate(self,  title="", x_lab="", y_lab="", draw=True, smooth=2):
         """
