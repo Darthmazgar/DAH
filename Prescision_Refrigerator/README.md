@@ -35,3 +35,7 @@ On the first cooling phase the efficiency of the cooling system will be calculat
 
 ## Thermometer ##
 
+
+## Cooling Data ##
+
+The file cooling_data.py is used to generate reference heating and coling curves which show how the temperature varies with time when heating and cooling.
