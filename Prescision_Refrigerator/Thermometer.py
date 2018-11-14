@@ -23,6 +23,7 @@ class Thermometer(object):
         self.tmp_aim = tmp_aim
         self.min_precision = 0.0625
         self.last_time = 0
+        self.init_out_file = False
 
         if show:
             plt.ion()  # Initialize figure to be drawn on.
@@ -112,7 +113,7 @@ class Thermometer(object):
             new = np.linspace(self.time_arr[0], self.time_arr[-1], 150)
             sm = spline(self.time_arr, self.rate_arr, new)  # Creates smoothed data.
             self.ax2.plot(new, sm)  # Plots smoothed data.
-        if not smooth or smooth == 2:
+        if smooth == 0 or smooth == 2:
             self.ax2.plot(self.time_arr, self.rate_arr)  # Plots raw data.
         if draw: 
             plt.tight_layout()
@@ -137,3 +138,15 @@ class Thermometer(object):
         test_range = stop - start
         score = count / test_range
         return score
+
+    def store_data(self, out_file="cooling_data.txt"):
+        if not self.init_out_file:
+            f = open(out_file, 'w')
+            # f.write("Tempreature data from precision refrigerator measured in degreese celcius.")
+            f.write("Tempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.")
+
+            self.init_out_file = True
+        else:            
+            f = open(out_file, 'a')
+        f.write("\n%f" % (self.tmp_arr[-1]))
+        f.close()
