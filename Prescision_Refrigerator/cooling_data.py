@@ -58,3 +58,5 @@ def main():
     plot_data(time_arr_h, heat_data, False)
 
     write_to_file(heat_data, time_arr_h, 'Heating_data.txt')
+    
+main()
