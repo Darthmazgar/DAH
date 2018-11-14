@@ -143,7 +143,7 @@ class Thermometer(object):
         if not self.init_out_file:
             f = open(out_file, 'w')
             # f.write("Tempreature data from precision refrigerator measured in degreese celcius.")
-            f.write("Tempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.")
+            f.write("Tempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.") ############################################
 
             self.init_out_file = True
         else:            
