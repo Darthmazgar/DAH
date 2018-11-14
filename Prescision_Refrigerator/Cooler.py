@@ -193,7 +193,7 @@ class Cooler(object):
         """
         Calculates the energy requited to change the temperature of water by a given amount.
         :param mass: (float) Mass of substance in kJ.
-        :param c: (float) Heat capacity of substance in K/kg/K.
+        :param c: (float) Heat capacity of substance in KJ/kg/K.
         :return: (float) The energy required.
         """
         delta_tmp = (self.tmp_aim + self.precision) - (self.tmp_aim - self.precision)
