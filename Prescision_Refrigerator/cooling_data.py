@@ -1,3 +1,11 @@
+"""
+Collects data for 1000 points where the water is cooling (cooler is on) then
+turns off the chip and collects reating data for 1000 points. This is done by
+just setting an very low temperate aim. This can be used
+as reference data for other experiments.
+"""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from Thermometer import Thermometer
@@ -58,5 +66,5 @@ def main():
     plot_data(time_arr_h, heat_data, False)
 
     write_to_file(heat_data, time_arr_h, 'Heating_curve_data.txt')
-    
+
 main()

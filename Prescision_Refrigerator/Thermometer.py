@@ -54,7 +54,7 @@ class Thermometer(object):
         self.tmp_arr[len(self.tmp_arr) - 1] = tmp  # New tmp in last position of the array.
         return tmp
 
-    def get_rate(self, range=3):
+    def get_rate_avg(self, range=3):
         """Return the avg rate over the last range time steps."""
         return np.average(self.rate_arr[-range:])
 
@@ -115,7 +115,7 @@ class Thermometer(object):
             self.ax2.plot(new, sm)  # Plots smoothed data.
         if smooth == 0 or smooth == 2:
             self.ax2.plot(self.time_arr, self.rate_arr)  # Plots raw data.
-        if draw: 
+        if draw:
             plt.tight_layout()
             self.fig.canvas.draw()
             self.fig.canvas.flush_events()
@@ -146,7 +146,7 @@ class Thermometer(object):
             f.write("Tempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.") ############################################
 
             self.init_out_file = True
-        else:            
+        else:
             f = open(out_file, 'a')
         f.write("\n%f" % (self.tmp_arr[-1]))
         f.close()
