@@ -70,6 +70,8 @@ def main():
                 sys.exit()
 
         cooler.pre_empt_conv()  # Converges the temperature by switching the state of the cooling chip using several different methods.
+        # Method operations:
+        #   converge(), hysteretic_conv(), rate_limit_conv(), pre_empt_conv(rate)
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
                            y_lab="Temperature $^oC$", draw=False, smooth=True)
         if save_all_data:
