@@ -11,7 +11,7 @@ import time
 def write_to_file(x_data, y_data, out_file="Cooling_curve_data.txt"):
     f = open(out_file, 'w')
     for i in range(len(x_data)):
-        f.write("[%f, %f] \n" % (x_data, y_data))
+        f.write("[%f, %f] \n" % (x_data[i], y_data[i]))
     f.close()
 
 
@@ -41,7 +41,7 @@ def plot_data(x_data, y_data, cooling=True):
 def main():
     GPIO.setwarnings(False)  # Turn of warnings from GPIO.
 
-    data_len = 100
+    data_len = 1000
 
     tmp_aim = 15
     room_tmp = Thermometer(DS18S20(slave="10-000802deb0fc"), GPIO=GPIO, name="room")
