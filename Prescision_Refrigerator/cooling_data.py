@@ -16,10 +16,10 @@ from webiopi.devices.sensor.onewiretemp import DS18S20
 import time
 
 
-def write_to_file(x_data, y_data, out_file="Cooling_curve_data.txt"):
+def write_to_file(x_data, y_data, out_file="Cooling_curve_data_long.txt"):
     f = open(out_file, 'w')
     for i in range(len(x_data)):
-        f.write("[%f, %f] \n" % (x_data[i], y_data[i]))
+        f.write("%f %f \n" % (x_data[i], y_data[i]))
     f.close()
 
 
@@ -30,6 +30,8 @@ def collect_data(length, therm):
     for i in range(length):
         tmp_arr[i] = therm.get_tmp()
         time_arr[i] = time.time() - st
+        if i % 100 == 0:
+            print("%d/%d Complete." % (i,length))
     return tmp_arr, time_arr
 
 
@@ -49,7 +51,7 @@ def plot_data(x_data, y_data, cooling=True):
 def main():
     GPIO.setwarnings(False)  # Turn of warnings from GPIO.
 
-    data_len = 1000
+    data_len = 2000
 
     tmp_aim = 15
     room_tmp = Thermometer(DS18S20(slave="10-000802deb0fc"), GPIO=GPIO, name="room")
@@ -65,6 +67,6 @@ def main():
     heat_data, time_arr_h = collect_data(data_len, water_tmp)
     plot_data(time_arr_h, heat_data, False)
 
-    write_to_file(heat_data, time_arr_h, 'Heating_curve_data.txt')
+    write_to_file(heat_data, time_arr_h, 'Heating_curve_data_long.txt')
 
 main()
