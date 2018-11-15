@@ -58,7 +58,7 @@ class Thermometer(object):
         """Return the avg rate over the last range time steps."""
         return np.average(self.rate_arr[-range:])
 
-    def plot_tmp(self, title="", x_lab="", y_lab="", draw=True, smooth=2):
+    def plot_tmp(self, title="", x_lab="", y_lab="", draw=True, smooth=0):
         """
         Clears previous plot and plots temperate vs time on an ion canvas with the aim temperature shown in red.
         This has the advantage over FuncAnimation as the window can remain open while other operations are carried out.
@@ -67,7 +67,7 @@ class Thermometer(object):
         """
         self.ax1.clear()
         self.ax1.set_title(title)
-        self.ax1.set_xlabel(x_lab)
+        self.ax1.set_xlabel(x_lab + " (Red line = Aim Temperature)")
         self.ax1.set_ylabel(y_lab)
         if smooth == 1 or smooth == 2:
             new = np.linspace(self.time_arr[0], self.time_arr[-1], 150)
@@ -96,7 +96,7 @@ class Thermometer(object):
         self.rate_arr[len(self.rate_arr) - 1] = rate
         return rate, np.average(self.rate_arr[-5:])
 
-    def plot_rate(self,  title="", x_lab="", y_lab="", draw=True, smooth=2):
+    def plot_rate(self,  title="", x_lab="", y_lab="", draw=True, smooth=0):
         """
         Clears previous plot and plots temperature change rate vs time on an ion canvas with the aim temperature
         shown in red. This has the advantage over FuncAnimation as the window can remain open while other operations
@@ -107,7 +107,7 @@ class Thermometer(object):
         self.ax2.clear()
         self.ax2.axhline(y=np.average(self.rate_arr), color=(1, 0, 0), linewidth=.8)
         self.ax2.set_title(title)
-        self.ax2.set_xlabel(x_lab)
+        self.ax2.set_xlabel(x_lab + " (Red line = Average Rate)")
         self.ax2.set_ylabel(y_lab)
         if smooth == 1 or smooth == 2:
             new = np.linspace(self.time_arr[0], self.time_arr[-1], 150)

@@ -1,5 +1,6 @@
 import time
 import numpy as np
+import sys
 
 
 class Cooler(object):
@@ -169,10 +170,14 @@ class Cooler(object):
         """
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
-        if rate <= 0 and tmp_dif < 5 * rate:  # If cooling and close to aim tmp turn off.
+        if rate <= 0 and tmp_dif < 2. * rate:  # If cooling and close to aim tmp turn off.
             self.turn_off()
-        elif rate > 0 and tmp_dif < 3*rate:  # If heating and close to aim tmp turn on.
+        elif rate > 0 and tmp_dif < 2. * rate:  # If heating and close to aim tmp turn on.
             self.turn_on()
+        elif tmp > self.tmp_aim and not self.on:
+            self.turn_on()
+        elif tmp < self.tmp_aim and self.on:
+            self.turn_off()
 
     def energy_used(self, v, I):
         """
