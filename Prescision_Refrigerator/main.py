@@ -27,14 +27,14 @@ def main():
     GPIO.setwarnings(False)  # Turn of warnings from GPIO.
     pygame.init()
 
-    tmp_aim = 15
+    tmp_aim = 22.0
     # tmp_aim = float(input("Enter the aim temperature: "))
     precision = 0  # 0.0625  # Degrees (tmp +/- precision)
     mass = 0.05  # Mass in kg
     v = 3.  # Supply voltage of current chip.
     i = 1.5  # Supply current of cooling chip.
     count = 0
-    test_range = 50
+    test_range = 75
     save_all_data = False
 
     room_tmp = Thermometer(DS18S20(slave="10-000802deb0fc"), GPIO=GPIO, name="room")
@@ -65,13 +65,14 @@ def main():
                     cooler.set_precision(tmp, pr=True)
                 if event.key == pygame.K_t:
                     water_tmp.print_tmp()
-            if event.type == QUIT:
+            if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
 
-        cooler.pre_empt_conv()  # Converges the temperature by switching the state of the cooling chip using several different methods.
+        rate = water_tmp.get_rate_avg()
+        cooler.pre_empt_conv(rate)  # Converges the temperature by switching the state of the cooling chip using several different methods.
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
-                           y_lab="Temperature $^oC$", draw=False, smooth=True)
+                           y_lab="Temperature $^oC$", draw=False)
         if save_all_data:
             water_tmp.store_data()
 
