@@ -8,7 +8,7 @@ from webiopi.devices.sensor.onewiretemp import DS18S20
 import time
 
 
-def write_to_file(x_data, y_data, out_file="Cooling_data.txt"):
+def write_to_file(x_data, y_data, out_file="Cooling_curve_data.txt"):
     f = open(out_file, 'w')
     for i in range(len(x_data)):
         f.write("[%f, %f] \n" % (x_data, y_data))
@@ -57,6 +57,6 @@ def main():
     heat_data, time_arr_h = collect_data(data_len, water_tmp)
     plot_data(time_arr_h, heat_data, False)
 
-    write_to_file(heat_data, time_arr_h, 'Heating_data.txt')
+    write_to_file(heat_data, time_arr_h, 'Heating_curve_data.txt')
     
 main()
