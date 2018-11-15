@@ -35,6 +35,9 @@ On the first cooling phase the efficiency of the cooling system will be calculat
 
 ## Thermometer ##
 
+The thermometer class deals with the reading and recording of temperature. Every time a request for temperature data is made that temperature is stored in an array of given length (arr_len). This array updates by removing the 0th element and adding the new data point in to the last position in the array. Following this the rate of temperature change can be cound by compating the two most recent temperatures and dividing by the time take between readings to get a rate of temperature change in degrees per second. This updates an array in a similar manner to the temperature. Plots of these data can be made which live update when new data is colected.
+
+The class also has functionality to calculate a percentage score of how closely the temperature data matched the aim temperature given (aim_tmp). This counts how many data are within a precision range of the aim temperature and divited by the total number of data to give a score.
 
 ## Cooling Data ##
 
