@@ -69,7 +69,7 @@ def main():
                 pygame.quit()
                 sys.exit()
 
-        cooler.rate_limit_conv()  # Converges the temperature by switching the state of the cooling chip using several different methods.
+        cooler.pre_empt_conv()  # Converges the temperature by switching the state of the cooling chip using several different methods.
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
                            y_lab="Temperature $^oC$", draw=False, smooth=True)
         if save_all_data:
