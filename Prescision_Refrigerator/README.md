@@ -20,7 +20,7 @@ and off when below (-precision/2). This was chosen based on the assumption that 
 quicker that it will fall, so limits the amount the temperature will fall by half as much as just Converge
 alone.
 * **Rate_limit_conv**:
-* **Pre_emp_conv**: 
+* **Pre_emp_conv**: This takes the average rate of temperature change over the last number of measurement steps (here 5  is used). If the average rate of temperature change is positive and the temperature is close to the aim temperature then the chip is switched off, pre-empting the point at chich the temperature will go above the aim temperature. And the same process in reverse with a negative rate of change. Since it is assumed that the temperature will increase faster than it will decrease due to the ambient temperature being rlativly high then the 'near' range about the aim temperature is less for the cooling direction (within 3 * the rate (per second)) than the heating direction (within 5 * the rate (per second)). 
 
 All of the above cooling methods will cool to an aim temperature at which the temperature will oscillate in a
 sinusoidal manar about the aim temperature with different amplitudes and frequencies depending on the 
