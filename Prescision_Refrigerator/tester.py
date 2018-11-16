@@ -1,12 +1,13 @@
-# Import GPIO library
+'''
+Used to test cirsuitry by turning on GPIO pin 24 for 5 seconds 
+then turning setting pin 24 back to low. 
+'''
 import RPi.GPIO as GPIO
 import time
 
-# Configure standard GPIO mode
-# "BCM" refers to the Broadcom processor
+
 GPIO.setmode(GPIO.BCM)
 
-# Define the pin number for the LED
 cooler = 24
 
 # Control the LED
