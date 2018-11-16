@@ -5,7 +5,12 @@ the temperature of a substance by alternating the state of a Peltier heat pump
 operating on a separate current loop which is toggled using a transistor switch.
 
 The system is made up of two main classes; Thermometer and Cooler with an optional add on of Fan
-(still incomplete).
+(template only).
+
+### Run Programme ###
+
+In main.py choose an aim temperature (tmp_aim); a precition level (precision); a mass of fluid (mass) in kg; 
+the input voltage and current (v, i); then choose a convergence method and run main.py.
 
 ## Cooler ##
 
