@@ -1,3 +1,8 @@
+"""
+Unbused class which gives an outline to power a fan
+to aid in cooling.
+"""
+
 import time
 
 
