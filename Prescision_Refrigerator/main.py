@@ -26,6 +26,8 @@ def wait():
 def main():
     GPIO.setwarnings(False)  # Turn of warnings from GPIO.
     pygame.init()
+    screen = pygame.display.set_mode((640, 480))  # Window to allow keyboard input.
+    pygame.display.set_caption("Precision Refrigerator")
 
     tmp_aim = 22.0
     # tmp_aim = float(input("Enter the aim temperature: "))
@@ -65,18 +67,16 @@ def main():
                     cooler.set_precision(tmp, pr=True)
                 if event.key == pygame.K_t:
                     water_tmp.print_tmp()
+                else:
+                    print("Not valid input.")
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
 
-<<<<<<< HEAD
-        cooler.pre_empt_conv()  # Converges the temperature by switching the state of the cooling chip using several different methods.
         # Method operations:
         #   converge(), hysteretic_conv(), rate_limit_conv(), pre_empt_conv(rate)
-=======
         rate = water_tmp.get_rate_avg()
         cooler.pre_empt_conv(rate)  # Converges the temperature by switching the state of the cooling chip using several different methods.
->>>>>>> 979f8a8d4727ee2498ef775a2a7df3316b8e542f
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
                            y_lab="Temperature $^oC$", draw=False)
         if save_all_data:
