@@ -1,7 +1,8 @@
 Converge
 Tempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.
-                     Pre_empt_cov
-                     Start room temperature = 23.56
+Pre_empt_cov
+Start room temperature = 23.56
+
 21.562000
 21.562000
 21.562000

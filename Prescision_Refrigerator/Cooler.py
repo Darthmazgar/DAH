@@ -222,7 +222,7 @@ class Cooler(object):
             # of (reaches aim temperature - precision)
             self.eff_calced = True
             eff = self.energy_water(mass) / self.energy_used(v, i)
-            print("The efficiency of the refrigerator is: %.0f %%." %(eff*100))
+            print("The efficiency of the refrigerator is: %.2f %%." %(eff*100))
             return eff
         else:
             return False
