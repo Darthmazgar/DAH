@@ -12,6 +12,13 @@ The system is made up of two main classes; Thermometer and Cooler with an option
 In main.py choose an aim temperature (tmp_aim); a precition level (precision); a mass of fluid (mass) in kg; 
 the input voltage and current (v, i); then choose a convergence method and run main.py.
 
+While the progream is running you can interact by pressing different keys: 'o' Manualy turn on the coole; 'f' 
+Manualy turn off the cooler; 's' To change the aim temperature; 'p' Change the precision of the refrigerator; 
+'t' To print the current temperature; and 'c' To select the convergence method. Slightly unfortunatly at the 
+moment to give keyboard input you need to be on the pygame window. To then change to give input you will have 
+to change back to the terminal to give your input and then click back to the pygame window to continue giving
+input.
+
 ## Cooler ##
 
 The cooler class controls the state of the cooling chip. Depending on the

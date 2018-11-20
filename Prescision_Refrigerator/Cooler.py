@@ -75,6 +75,9 @@ class Cooler(object):
         else:
             return self.total_on_time
 
+    def get_conv_methods(self):
+        return [converge(), hysteretic_conv(), rate_limit_conv(), pre_empt_conv(rate)]
+
     def turn_on(self):
         """
         Turns on the cooling chip and records the time the chip is turned on.

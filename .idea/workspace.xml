@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="" />
+    <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/conv_copy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/hyst_copy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/pre_copy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/rate_copy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DAH$scratch_2.coverage" NAME="scratch_2 Coverage Results" MODIFIED="1541449842738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
@@ -15,63 +34,68 @@
     <SUITE FILE_PATH="coverage/DAH$scratch_3.coverage" NAME="scratch_3 Coverage Results" MODIFIED="1541542320604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/DAH$DAH_quiz__1_.coverage" NAME="DAH_quiz (1) Coverage Results" MODIFIED="1541110366993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iain_quiz" />
     <SUITE FILE_PATH="coverage/DAH$main.coverage" NAME="main Coverage Results" MODIFIED="1541540631493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator" />
+    <SUITE FILE_PATH="coverage/DAH$plot_meth.coverage" NAME="plot_meth Coverage Results" MODIFIED="1542743236593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator/Text_files" />
     <SUITE FILE_PATH="coverage/DAH$DAH_quiz.coverage" NAME="DAH_quiz Coverage Results" MODIFIED="1541109270703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DAH$checkpoint_6a.coverage" NAME="checkpoint_6a Coverage Results" MODIFIED="1540911586176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/DAH$tester.coverage" NAME="tester Coverage Results" MODIFIED="1541108727048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator" />
-    <SUITE FILE_PATH="coverage/DAH$scratch_4.coverage" NAME="scratch_4 Coverage Results" MODIFIED="1542307687766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/DAH$scratch_4.coverage" NAME="scratch_4 Coverage Results" MODIFIED="1542479593391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1879478870">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="PNG" value="1" />
-          <entry key="jpg" value="2" />
-          <entry key="md" value="1" />
-          <entry key="py" value="31" />
-          <entry key="txt" value="1" />
+          <entry key="jpg" value="3" />
+          <entry key="md" value="2" />
+          <entry key="py" value="41" />
+          <entry key="txt" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="3" />
-          <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="27" />
-          <entry key="Scratch" value="4" />
+          <entry key="Image" value="4" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="Python" value="36" />
+          <entry key="Scratch" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Python Console" value="13" />
           <entry key="dummy" value="1" />
-          <entry key="py" value="13054" />
-          <entry key="txt" value="1351" />
+          <entry key="md" value="657" />
+          <entry key="py" value="15343" />
+          <entry key="txt" value="1412" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1352" />
-          <entry key="Python" value="12786" />
-          <entry key="Scratch" value="268" />
+          <entry key="Markdown" value="657" />
+          <entry key="PLAIN_TEXT" value="1413" />
+          <entry key="Python" value="14792" />
+          <entry key="Scratch" value="564" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
-          <entry key="git.branch.checkout.local" value="1" />
-          <entry key="git.branch.create.new" value="2" />
+          <entry key="git.branch.checkout.local" value="2" />
+          <entry key="git.branch.create.new" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -79,66 +103,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2890">
-              <caret line="171" column="17" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/cooling_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/hyst_copy.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="532">
+              <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/comparison.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="29" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Fan.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/rate_copy.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/pre_copy.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/conv_copy.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -154,7 +167,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Fix_minimums" />
+        <entry key="$PROJECT_DIR$" value="interface" />
       </map>
     </option>
   </component>
@@ -172,11 +185,17 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Fan.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/cooling_data.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/README.md" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py" />
       </list>
     </option>
   </component>
@@ -210,6 +229,12 @@
               <item name="DAH" type="462c0819:PsiDirectoryNode" />
               <item name="Prescision_Refrigerator" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DAH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DAH" type="462c0819:PsiDirectoryNode" />
+              <item name="Prescision_Refrigerator" type="462c0819:PsiDirectoryNode" />
+              <item name="Text_files" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -218,6 +243,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="git&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -225,6 +251,135 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\iainm\OneDrive\Uni 2018-19\Data Acuisition and Handeling\DAH\Prescision_Refrigerator\Text_files" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/__pycache__/Cooler.cpython-35.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/__pycache__/Fan.cpython-35.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/__pycache__/Thermometer.cpython-35.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/main.py</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Cooler.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Fan.pyc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Images/display.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.pyc</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -238,7 +393,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.scratch_4">
+  <component name="RunManager" selected="Python.plot_meth">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DAH" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -261,7 +416,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scratch_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="plot_meth" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DAH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -269,12 +424,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -350,19 +505,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.scratch_1" />
       <item itemvalue="Python.scratch_2" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.scratch_3" />
       <item itemvalue="Python.scratch_4" />
+      <item itemvalue="Python.plot_meth" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.plot_meth" />
         <item itemvalue="Python.scratch_4" />
         <item itemvalue="Python.scratch_3" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.scratch_2" />
-        <item itemvalue="Python.scratch_1" />
       </list>
     </recent_temporary>
   </component>
@@ -573,7 +728,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541596552848</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Pygame should be working now (ish)">
+      <created>1542459079685</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1542459079685</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -588,12 +750,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.098614074" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49568966" visible="true" weight="0.10181237" />
+      <window_info id="Structure" order="1" sideWeight="0.50431037" side_tool="true" visible="true" weight="0.10181237" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2532189" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2532189" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -603,11 +765,11 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32939914" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.2457356" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.40245202" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -646,7 +808,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Now considering percentages of the data and not fixed values. This will allow for the number of bins to change." />
     <MESSAGE value="FML one spiky boi keeps fucking me" />
     <MESSAGE value="Added a bit that removes peaks if less than a certain height but will only work for this bin sizing!!!!" />
     <MESSAGE value="Identifies a reigon of decrease around the peaks" />
@@ -671,7 +832,8 @@
     <MESSAGE value="Convergence rate calculateion in deg/sec" />
     <MESSAGE value="Neater and some less things printing. Need to visualise when on/off." />
     <MESSAGE value="Energy used" />
-    <option name="LAST_COMMIT_MESSAGE" value="Energy used" />
+    <MESSAGE value="Pygame should be working now (ish)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pygame should be working now (ish)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -795,21 +957,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/tmp_data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-534" />
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/tmp_data.txt" />
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="323">
+            <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2890">
-          <caret line="171" column="17" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
+        <state relative-caret-position="1292">
+          <caret line="78" column="26" lean-forward="true" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/cooling_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="41" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
+        <state relative-caret-position="1632">
           <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -817,36 +1002,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pip/_internal/vcs/git.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="29" selection-end-column="16" />
+        <state>
           <folding>
-            <element signature="e#0#87#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Fan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/cooling_data.py">
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="408">
+          <caret line="75" column="12" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/conv_copy.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/pre_copy.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/hyst_copy.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/rate_copy.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Uni 2017-18/Experimental Physics/graphing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/comparison.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
