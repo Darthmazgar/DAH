@@ -42,7 +42,7 @@ class Cooler(object):
 
     def set_tmp_aim(self, tmp, pr=False):
         self.tmp_aim = tmp
-        self.therm = tmp  # Reset tmp aim for the Thermometer class
+        self.therm.tmp_aim = tmp  # Reset tmp aim for the Thermometer class
         if pr:
             print("Temperature aim set to %.2f degrees." % self.tmp_aim)
         return self.tmp_aim
@@ -87,7 +87,7 @@ class Cooler(object):
         self.on_time = time.time()
 
         if not self.first_on:
-            self.first_on = True
+            self.first_on = self.therm.get_tmp()
             self.init_time = time.time()
         return True
 
@@ -103,7 +103,7 @@ class Cooler(object):
         self.on = False
         self.total_on_time += time.time() - self.on_time  # Set the total on time
         if not self.first_off and self.first_on:
-            self.first_off = True
+            self.first_off = self.therm.get_tmp()
             self.final_time = time.time()
 
         return False
@@ -202,8 +202,10 @@ class Cooler(object):
         :param c: (float) Heat capacity of substance in KJ/kg/K.
         :return: (float) The energy required.
         """
-        delta_tmp = (self.tmp_aim + self.precision) - (self.tmp_aim - self.precision)
+        
+        delta_tmp = self.first_on - self.first_off
         cooling_energy = c * mass * delta_tmp
+        print("delta_tmp: %.2f, mass: %.2f, c: %.2f." %(delta_tmp, mass, c))
         return cooling_energy
 
     def efficiency(self, mass, v, i):
@@ -220,7 +222,7 @@ class Cooler(object):
             # of (reaches aim temperature - precision)
             self.eff_calced = True
             eff = self.energy_water(mass) / self.energy_used(v, i)
-            print("The efficiency of the refrigerator is: %.3f %%." %(eff*100))
+            print("The efficiency of the refrigerator is: %.0f %%." %(eff*100))
             return eff
         else:
             return False

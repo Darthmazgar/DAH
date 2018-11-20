@@ -1,0 +1,5 @@
+Converge
+Tempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.
+                     Hysteretic_cov
+                     Start room temperature = 23.62
+21.312000

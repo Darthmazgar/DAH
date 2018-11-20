@@ -139,11 +139,13 @@ class Thermometer(object):
         score = count / test_range
         return score
 
-    def store_data(self, out_file="cooling_data.txt"):
+    def store_data(self, out_file="cooling_data_hyst.txt"):
         if not self.init_out_file:
             f = open(out_file, 'w')
             # f.write("Tempreature data from precision refrigerator measured in degreese celcius.")
-            f.write("Tempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.") ############################################
+            f.write("Converge\nTempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.\n\
+                     Hysteretic_cov\n\
+                     Start room temperature = 23.62") 
 
             self.init_out_file = True
         else:

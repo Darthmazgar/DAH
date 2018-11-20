@@ -13,13 +13,15 @@ def wait():
     """
     Condition to wait for next input to restart the cooler after a manual switch off.
     """
+    print("Waiting to restart. press 'c' to continue.")
+
     while True:
-        print("Waiting to restart. press 'c' to continue.")
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == K_c:
+            if event.type == pygame.K_c:
+                print("Continuing ... ")
                 return False
 
 
@@ -28,16 +30,15 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((640, 480))  # Window to allow keyboard input.
     pygame.display.set_caption("Precision Refrigerator")
-
-    tmp_aim = 22.0
+    tmp_aim = 21.40
     # tmp_aim = float(input("Enter the aim temperature: "))
-    precision = 0  # 0.0625  # Degrees (tmp +/- precision)
+    precision = 0.125  # 0.0625  # Degrees (tmp +/- precision)
     mass = 0.05  # Mass in kg
     v = 3.  # Supply voltage of current chip.
     i = 1.5  # Supply current of cooling chip.
     count = 0
     test_range = 75
-    save_all_data = False
+    save_all_data = True
 
     room_tmp = Thermometer(DS18S20(slave="10-000802deb0fc"), GPIO=GPIO, name="room")
     water_tmp = Thermometer(DS18B20(slave="28-000006cb82c6"), GPIO=GPIO, name="water", tmp_aim=tmp_aim,
@@ -46,11 +47,10 @@ def main():
                     precision=precision, input_pin=24)
     print("Current aim temperature set to: %.2f degrees celicus." % (tmp_aim))
     print("Keyboard commands:\n    'o' = Turn on cooler.\n    'f' = Turn off cooler.\n    's' = Set aim temperature.\n"
-          "    'p' = Set precision of cooler.\n    't' = Show current Temperature.\n")
+          "    'p' = Set precision of cooler.\n    't' = Show current Temperature.\n    'r' = Show current room temperature.\n")
 
     while True:  # TODO Change to have a run function to leave main as a set up only once key input has been tested.
         for event in pygame.event.get():  # Receiving input to set the state
-            print(event)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_o:
                     cooler.turn_on()
@@ -61,14 +61,14 @@ def main():
                     wait()  # If turned of then don't turn straight back on again.
                 if event.key == pygame.K_s:
                     tmp = float(input("Set the aim temperature:"))
-                    cooler.set_tmp(tmp, pr=True)
+                    cooler.set_tmp_aim(tmp, pr=True)
                 if event.key == pygame.K_p:
                     tmp = float(input("Set precision temperature range (i.e. +/- tmp):"))
                     cooler.set_precision(tmp, pr=True)
                 if event.key == pygame.K_t:
                     water_tmp.print_tmp()
-                else:
-                    print("Not valid input.")
+                if event.key == pygame.K_r:
+                    room_tmp.print_tmp()
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
@@ -76,7 +76,7 @@ def main():
         # Method operations:
         #   converge(), hysteretic_conv(), rate_limit_conv(), pre_empt_conv(rate)
         rate = water_tmp.get_rate_avg()
-        cooler.pre_empt_conv(rate)  # Converges the temperature by switching the state of the cooling chip using several different methods.
+        cooler.hysteretic_conv()
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
                            y_lab="Temperature $^oC$", draw=False)
         if save_all_data:
