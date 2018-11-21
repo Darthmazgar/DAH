@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/conv_copy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/hyst_copy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/pre_copy.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/rate_copy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/loaded_therm_calib.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/conv_copy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/hyst_copy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/pre_copy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/rate_copy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,17 +24,19 @@
     </option>
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DAH$scratch_2.coverage" NAME="scratch_2 Coverage Results" MODIFIED="1541449842738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/DAH$p_n_junction3.coverage" NAME="p_n_junction3 Coverage Results" MODIFIED="1540905947868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../Computing/Num_Rec/CP2" />
     <SUITE FILE_PATH="coverage/DAH$scratch_1.coverage" NAME="scratch_1 Coverage Results" MODIFIED="1541449684526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
     <SUITE FILE_PATH="coverage/DAH$scratch_3.coverage" NAME="scratch_3 Coverage Results" MODIFIED="1541542320604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
-    <SUITE FILE_PATH="coverage/DAH$DAH_quiz__1_.coverage" NAME="DAH_quiz (1) Coverage Results" MODIFIED="1541110366993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iain_quiz" />
     <SUITE FILE_PATH="coverage/DAH$main.coverage" NAME="main Coverage Results" MODIFIED="1541540631493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator" />
-    <SUITE FILE_PATH="coverage/DAH$plot_meth.coverage" NAME="plot_meth Coverage Results" MODIFIED="1542743236593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator/Text_files" />
-    <SUITE FILE_PATH="coverage/DAH$DAH_quiz.coverage" NAME="DAH_quiz Coverage Results" MODIFIED="1541109270703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DAH$plot_meth.coverage" NAME="plot_meth Coverage Results" MODIFIED="1542745565459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator/Text_files" />
     <SUITE FILE_PATH="coverage/DAH$checkpoint_6a.coverage" NAME="checkpoint_6a Coverage Results" MODIFIED="1540911586176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/DAH$tester.coverage" NAME="tester Coverage Results" MODIFIED="1541108727048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator" />
     <SUITE FILE_PATH="coverage/DAH$scratch_4.coverage" NAME="scratch_4 Coverage Results" MODIFIED="1542479593391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/DAH$scratch_2.coverage" NAME="scratch_2 Coverage Results" MODIFIED="1541449842738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/DAH$loaded_therm_calib.coverage" NAME="loaded_therm_calib Coverage Results" MODIFIED="1542816322258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration" />
+    <SUITE FILE_PATH="coverage/DAH$scratch_5.coverage" NAME="scratch_5 Coverage Results" MODIFIED="1542815949506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_CONFIG_DIR$/scratches" />
+    <SUITE FILE_PATH="coverage/DAH$DAH_quiz__1_.coverage" NAME="DAH_quiz (1) Coverage Results" MODIFIED="1541110366993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iain_quiz" />
+    <SUITE FILE_PATH="coverage/DAH$DAH_quiz.coverage" NAME="DAH_quiz Coverage Results" MODIFIED="1541109270703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1879478870">
@@ -53,8 +51,8 @@
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.open.time.8" value="4" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -62,17 +60,18 @@
           <entry key="PNG" value="1" />
           <entry key="jpg" value="3" />
           <entry key="md" value="2" />
-          <entry key="py" value="41" />
-          <entry key="txt" value="9" />
+          <entry key="png" value="2" />
+          <entry key="py" value="48" />
+          <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="4" />
+          <entry key="Image" value="6" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="36" />
-          <entry key="Scratch" value="5" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="Python" value="41" />
+          <entry key="Scratch" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -80,22 +79,22 @@
           <entry key="Python Console" value="13" />
           <entry key="dummy" value="1" />
           <entry key="md" value="657" />
-          <entry key="py" value="15343" />
-          <entry key="txt" value="1412" />
+          <entry key="py" value="15926" />
+          <entry key="txt" value="1442" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="657" />
-          <entry key="PLAIN_TEXT" value="1413" />
-          <entry key="Python" value="14792" />
-          <entry key="Scratch" value="564" />
+          <entry key="PLAIN_TEXT" value="1443" />
+          <entry key="Python" value="15254" />
+          <entry key="Scratch" value="685" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
           <entry key="git.branch.checkout.local" value="2" />
-          <entry key="git.branch.create.new" value="3" />
+          <entry key="git.branch.create.new" value="4" />
         </counts>
       </usages-collector>
     </session>
@@ -103,40 +102,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/hyst_copy.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm_calib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="34" selection-end-column="41" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/comparison.jpg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/rate_copy.txt">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -145,13 +119,54 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/pre_copy.txt">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/conv_copy.txt">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm1_calib_data.txt">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/loaded_therm_calib.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm1_calib_data_low.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm2_calib_data.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm2_calib_data_low.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm_calib_low.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm_calib.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -167,7 +182,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="interface" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -187,15 +202,17 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/cooling_data.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py" />
-        <option value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/README.md" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt" />
         <option value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.py" />
+        <option value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/loaded_therm_calib.py" />
       </list>
     </option>
   </component>
@@ -206,10 +223,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="x" value="37" />
+    <option name="y" value="352" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -233,7 +250,7 @@
               <item name="DAH" type="b2602c69:ProjectViewProjectNode" />
               <item name="DAH" type="462c0819:PsiDirectoryNode" />
               <item name="Prescision_Refrigerator" type="462c0819:PsiDirectoryNode" />
-              <item name="Text_files" type="462c0819:PsiDirectoryNode" />
+              <item name="Thermometer Calibration" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -257,130 +274,6 @@
       <recent name="C:\Users\iainm\OneDrive\Uni 2018-19\Data Acuisition and Handeling\DAH\Prescision_Refrigerator\Text_files" />
     </key>
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/__pycache__/Cooler.cpython-35.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/__pycache__/Fan.cpython-35.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/__pycache__/Thermometer.cpython-35.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/main.py</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Cooler.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Fan.pyc</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Images/display.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.pyc</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
-  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -393,8 +286,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.plot_meth">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.loaded_therm_calib">
+    <configuration name="loaded_therm_calib" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DAH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -402,12 +295,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prescision_Refrigerator" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prescision_Refrigerator/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/loaded_therm_calib.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -430,28 +323,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="scratch_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="DAH" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -504,20 +375,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="scratch_5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DAH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.scratch_2" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.scratch_3" />
       <item itemvalue="Python.scratch_4" />
       <item itemvalue="Python.plot_meth" />
+      <item itemvalue="Python.scratch_5" />
+      <item itemvalue="Python.loaded_therm_calib" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.loaded_therm_calib" />
+        <item itemvalue="Python.scratch_5" />
         <item itemvalue="Python.plot_meth" />
         <item itemvalue="Python.scratch_4" />
         <item itemvalue="Python.scratch_3" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.scratch_2" />
       </list>
     </recent_temporary>
   </component>
@@ -735,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542459079685</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Iain's results and analysis.">
+      <created>1542744179915</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1542744179915</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -749,9 +649,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49568966" visible="true" weight="0.10181237" />
-      <window_info id="Structure" order="1" sideWeight="0.50431037" side_tool="true" visible="true" weight="0.10181237" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49568966" visible="true" weight="0.13646056" />
+      <window_info id="Structure" order="1" sideWeight="0.50431037" side_tool="true" weight="0.10181237" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -769,7 +670,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.40245202" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.40245202" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -808,7 +709,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FML one spiky boi keeps fucking me" />
     <MESSAGE value="Added a bit that removes peaks if less than a certain height but will only work for this bin sizing!!!!" />
     <MESSAGE value="Identifies a reigon of decrease around the peaks" />
     <MESSAGE value="Calculating the peak range means, vars, and stdevs." />
@@ -833,7 +733,8 @@
     <MESSAGE value="Neater and some less things printing. Need to visualise when on/off." />
     <MESSAGE value="Energy used" />
     <MESSAGE value="Pygame should be working now (ish)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pygame should be working now (ish)" />
+    <MESSAGE value="Iain's results and analysis." />
+    <option name="LAST_COMMIT_MESSAGE" value="Iain's results and analysis." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -968,27 +869,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="78" column="26" lean-forward="true" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/cooling_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="39" column="12" lean-forward="true" selection-start-line="39" selection-start-column="12" selection-end-line="41" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -996,20 +880,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
           <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/pip/_internal/vcs/git.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Fan.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1018,62 +893,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/conv_copy.txt" />
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/pre_copy.txt" />
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/hyst_copy.txt" />
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/rate_copy.txt" />
+    <entry file="file://$PROJECT_DIR$/../../../Uni 2017-18/Experimental Physics/graphing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/comparison.jpg" />
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py" />
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Analysis and plotting/plot_meth.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/cooling_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="75" column="12" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+        <state relative-caret-position="1173">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
           <folding>
             <element signature="e#0#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_converge.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/conv_copy.txt">
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_pre_empt.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/pre_copy.txt">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/hyst_copy.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_rate_lim.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/rate_copy.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../Uni 2017-18/Experimental Physics/graphing.py">
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm_calib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="34" selection-end-column="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/comparison.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/cooling_data_hyst.txt">
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm1_calib_data.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Text_files/plot_meth.py">
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm2_calib_data_low.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm2_calib_data.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm1_calib_data_low.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        <state relative-caret-position="119">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/loaded_therm_calib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm_calib_low.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/therm_calib.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
   <component name="masterDetails">

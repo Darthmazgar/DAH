@@ -75,7 +75,6 @@ def main():
 
         # Method operations:
         #   converge(), hysteretic_conv(), rate_limit_conv(), pre_empt_conv(rate)
-        rate = water_tmp.get_rate_avg()
         cooler.hysteretic_conv()
         water_tmp.plot_tmp(title="Temperature Varying with Time.", x_lab="Time Step",
                            y_lab="Temperature $^oC$", draw=False)
