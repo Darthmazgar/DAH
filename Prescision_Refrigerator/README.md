@@ -14,7 +14,7 @@ the input voltage and current (v, i); then choose a convergence method and run m
 
 While the progream is running you can interact by pressing different keys: 'o' Manualy turn on the coole; 'f' 
 Manualy turn off the cooler; 's' To change the aim temperature; 'p' Change the precision of the refrigerator; 
-'t' To print the current temperature; and 'c' To select the convergence method. Slightly unfortunatly at the 
+'t' To print the current temperature. Slightly unfortunately at the 
 moment to give keyboard input you need to be on the pygame window. To then change to give input you will have 
 to change back to the terminal to give your input and then click back to the pygame window to continue giving
 input.
@@ -54,3 +54,19 @@ The class also has functionality to calculate a percentage score of how closely 
 ## Cooling Data ##
 
 The file cooling_data.py is used to generate reference heating and coling curves which show how the temperature varies with time when heating and cooling.
+
+## Additional Files ##
+
+### Analysis and Plotting ###
+
+'plot_meth.py' Contains scripts which take temperature data and plots the data calculating statistical results such as the mean of the 
+mean, total error on the mean, reduced chi squared and percentage score.
+
+'smooth_data.py' Shows examples of smoothed data when compared to raw data.
+
+### Thermometer Calibration ### 
+
+'therm_calib.py' Records and temperature data from two thermometers and plots the temperatures together to see the 
+difference between the readings from the two thermometers in similar conditions.
+
+'loaded_therm_calib.py' Exact same functionality as above but for loaded data in the form of a .txt file. 

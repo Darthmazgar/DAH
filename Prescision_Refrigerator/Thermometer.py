@@ -21,23 +21,33 @@ class Thermometer(object):
         self.time_arr = np.arange(arr_len)  # Update with curr time every time the tmp is updated
         self.rate_arr = np.zeros(arr_len)
         self.tmp_aim = tmp_aim
-        self.min_precision = 0.0625
+        self.min_precision = 0.0625  # Precision level of thermometer used in degrease.
         self.last_time = 0
-        self.init_out_file = False
+        self.init_out_file = False  # Stores if the file has already been writen to to change to append mode rather than overwriting.
 
-        if show:
+        if show:  # Set up for live display.
             plt.ion()  # Initialize figure to be drawn on.
             self.fig = plt.figure()
-            self.ax1 = self.fig.add_subplot(211)
+            self.ax1 = self.fig.add_subplot(211)  # Set up subplots one above the other horizontally wide.
             self.ax2 = self.fig.add_subplot(212)
 
     def cels_to_K(self, cels):
+        """
+        :return: (float) Temperature in Kelvin.
+        """
         return cels + 273
 
     def K_to_cels(self, k):
+        """
+        :return: (float) Temperature in Celsius.
+        """
         return k - 273
 
     def print_tmp(self):
+        """
+        Print the current temperature of the thermometer.
+        :return: (float) Temperature in Celsius.
+        """
         tmp = self.therm.getCelsius()
         print("Current %s temperature is at %.2f degrees celsius." % (self.name, tmp))
         return tmp
@@ -65,7 +75,7 @@ class Thermometer(object):
         :param draw: (boolean) Displays updated plot.
         :param smooth: (int) 0: Plots raw data, 1: plots smoothed data, 2: plots both smooth and raw data together.
         """
-        self.ax1.clear()
+        self.ax1.clear()  # Clears canvas
         self.ax1.set_title(title)
         self.ax1.set_xlabel(x_lab + " (Red line = Aim Temperature)")
         self.ax1.set_ylabel(y_lab)
@@ -79,8 +89,8 @@ class Thermometer(object):
             self.ax1.axhline(y=self.tmp_aim, color=(1, 0, 0), linewidth=.8)  # Shows aim temperature as red horizontal line.
         if draw:
             plt.tight_layout()
-            self.fig.canvas.draw()
-            self.fig.canvas.flush_events()
+            self.fig.canvas.draw()  # Draws new plot on clear canvas.
+            self.fig.canvas.flush_events()  # Makes changes smooth between old and new canvas.
 
     def convergence_rate(self):
         """
@@ -104,8 +114,8 @@ class Thermometer(object):
         :param draw: (boolean) Displays updated plot.
         :param smooth: (int) 0: Plots raw data, 1: plots smoothed data, 2: plots both smooth and raw data together.
         """
-        self.ax2.clear()
-        self.ax2.axhline(y=np.average(self.rate_arr), color=(1, 0, 0), linewidth=.8)
+        self.ax2.clear()  # Clears previous canvas.
+        self.ax2.axhline(y=np.average(self.rate_arr), color=(1, 0, 0), linewidth=.8)  # Add horizontal line showing the mean rate.
         self.ax2.set_title(title)
         self.ax2.set_xlabel(x_lab + " (Red line = Average Rate)")
         self.ax2.set_ylabel(y_lab)
@@ -116,8 +126,8 @@ class Thermometer(object):
         if smooth == 0 or smooth == 2:
             self.ax2.plot(self.time_arr, self.rate_arr)  # Plots raw data.
         if draw:
-            plt.tight_layout()
-            self.fig.canvas.draw()
+            plt.tight_layout()  # Stops titles and axis from overlapping.
+            self.fig.canvas.draw()  # Draws new data on clear canvas.
             self.fig.canvas.flush_events()
 
     def conv_score(self, precision, start=0, stop=50):
@@ -140,15 +150,19 @@ class Thermometer(object):
         return score
 
     def store_data(self, out_file="cooling_data_hyst.txt"):
+        """
+        Stores the recorded temperature data at each time step.
+        :param out_file: (string) .txt file name to save to.
+        """
         if not self.init_out_file:
             f = open(out_file, 'w')
-            # f.write("Tempreature data from precision refrigerator measured in degreese celcius.")
-            f.write("Converge\nTempreature data from precision refrigerator measured in degreese celcius over a prolonged cooling phase.\n\
+            # Writed file header if the file is empty.
+            f.write("Converge\nTempreature data from precision refrigerator measured in degrease celsius over a prolonged cooling phase.\n\
                      Hysteretic_cov\n\
-                     Start room temperature = 23.62") 
-
+                     Start room temperature = 23.62")
             self.init_out_file = True
         else:
+            # Appends data rather than write to not overwrite data that is already there.
             f = open(out_file, 'a')
         f.write("\n%f" % (self.tmp_arr[-1]))
         f.close()

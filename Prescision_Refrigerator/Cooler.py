@@ -27,7 +27,7 @@ class Cooler(object):
         GPIO.setup(self.ip, GPIO.OUT)  # Set pin as an output
 
         self.on_time = 0  # Initialize on times.
-        self.init_time = 0  #############################NEED TO DECIDE WHICH OF THESE IS USEFUL
+        self.init_time = 0
         self.final_time = 0
 
         self.total_on_time = 0
@@ -38,9 +38,18 @@ class Cooler(object):
         self.eff_calced = False
 
     def get_tmp_aim(self):
+        """
+        :return: (float) Current aim temperature.
+        """
         return self.tmp_aim
 
     def set_tmp_aim(self, tmp, pr=False):
+        """
+        Sets the aim temperature of the cooling unit.
+        :param tmp: (float) New aim temperature in degrees C.
+        :param pr: (boolean) Print new aim temperature.
+        :return: (float) Current aim temperature.
+        """
         self.tmp_aim = tmp
         self.therm.tmp_aim = tmp  # Reset tmp aim for the Thermometer class
         if pr:
@@ -48,6 +57,9 @@ class Cooler(object):
         return self.tmp_aim
 
     def get_precision(self):
+        """
+        :return: Current precision level of the cooling unit.
+        """
         return self.precision
 
     def set_precision(self, pre, pr=False):
@@ -80,12 +92,13 @@ class Cooler(object):
         Turns on the cooling chip and records the time the chip is turned on.
         :return: True when complete.
         """
-        self.GPIO.output(self.ip, self.GPIO.HIGH)
+        self.GPIO.output(self.ip, self.GPIO.HIGH)  # Turn on the cooling chip.
         if not self.on:
             print("Cooling chip: ON")
         self.on = True
         self.on_time = time.time()
 
+        # Set up for measuring the energy used.
         if not self.first_on:
             self.first_on = self.therm.get_tmp()
             self.init_time = time.time()
@@ -97,11 +110,13 @@ class Cooler(object):
         current off time and the start time.
         :return: False when complete.
         """
-        self.GPIO.output(self.ip, self.GPIO.LOW)
+        self.GPIO.output(self.ip, self.GPIO.LOW)  # Turn off the cooling chip.
         if self.on:
             print("Cooling chip: OFF")
         self.on = False
-        self.total_on_time += time.time() - self.on_time  # Set the total on time
+        self.total_on_time += time.time() - self.on_time  # Set the total on time.
+
+        # Set up for measuring the energy used.
         if not self.first_off and self.first_on:
             self.first_off = self.therm.get_tmp()
             self.final_time = time.time()
@@ -145,6 +160,10 @@ class Cooler(object):
         return tmp_dif
 
     def rate_limit_conv(self):
+        """
+        Reduces the upper limit that the temperature can reach before switching on the cooling chip based on
+        the expected heating rate obtained from the difference between the temperature and the heating room temperature.
+        """
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
         upper = self.upper_limit()
@@ -157,16 +176,19 @@ class Cooler(object):
                 self.turn_on()
 
     def upper_limit(self):
-        # Calculates upper limit based on ambient and aim temperatures
+        """
+        Calculates upper limit based on ambient and aim temperatures
+        :return: (float) Upper temperature limit in degrees.
+        """
         amb = self.amb_therm.get_tmp()
         upper = self.precision / (amb - self.tmp_aim)
         return upper
 
     def pre_empt_conv(self, rate):
         """
-
-        :param rate: Average temperature rate of change over the last 5 time steps in degrees / s.
-        :return:
+        Truns on and of the cooling chip before the temperature has changed to being above or below the aim temperature
+        respectively based on the rate of change over the last few time steps.
+        :param rate: (float) Average temperature rate of change over the last 5 time steps in degrees / s.
         """
         tmp = self.therm.get_tmp()
         tmp_dif = np.abs(self.tmp_aim - tmp)
@@ -189,8 +211,8 @@ class Cooler(object):
         """
         if self.first_on and self.first_off:
             p = I * v
-            time = self.final_time - self.init_time
-            energy_used = p * time
+            t = self.final_time - self.init_time  # Total time the chip was on.
+            energy_used = p * t
             return energy_used
         else:
             return 0
@@ -202,7 +224,6 @@ class Cooler(object):
         :param c: (float) Heat capacity of substance in KJ/kg/K.
         :return: (float) The energy required.
         """
-        
         delta_tmp = self.first_on - self.first_off
         cooling_energy = c * mass * delta_tmp
         print("delta_tmp: %.2f, mass: %.2f, c: %.2f." %(delta_tmp, mass, c))

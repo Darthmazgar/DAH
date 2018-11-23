@@ -1,5 +1,5 @@
 '''
-Used to test cirsuitry by turning on GPIO pin 24 for 5 seconds 
+Used to test circuitry by turning on GPIO pin 24 for 5 seconds
 then turning setting pin 24 back to low. 
 '''
 import RPi.GPIO as GPIO
