@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Cooler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/loaded_therm_calib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer Calibration/loaded_therm_calib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Thermometer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/ideas.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/smooth_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/Analysis and plotting/smooth_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prescision_Refrigerator/tester.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prescision_Refrigerator/tester.py" afterDir="false" />
-    </list>
+    <list default="true" id="5366840e-e431-4525-be56-42e7f4a84834" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +33,7 @@
     <session id="-1879478870">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
@@ -594,7 +585,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49568966" visible="true" weight="0.119936034" />
       <window_info id="Structure" order="1" sideWeight="0.50431037" side_tool="true" weight="0.10181237" />
